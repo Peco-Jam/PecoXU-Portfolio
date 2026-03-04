@@ -57,7 +57,7 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
     >
       {/* Back Button & Header */}
       <div className="mb-6 pb-6 md:mb-8 md:pb-8 lg:mb-12 lg:pb-12 border-b border-black/10 dark:border-white/10 transition-colors duration-500">
-        <div className="hidden md:flex justify-end mb-4">
+        <div className="hidden md:flex justify-start mb-8">
           <button 
             onClick={onBack}
             className="flex items-center gap-1 text-[16px] font-[475] tracking-tight text-black/80 dark:text-white/80 hover:text-black dark:hover:text-white active:opacity-60 transition-none"
@@ -66,19 +66,24 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
             <span>Back</span>
           </button>
         </div>
-        <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter mb-4 text-black dark:text-white transition-colors duration-500">
-          {project.title}
-        </h1>
         
-        <div className="flex justify-between items-baseline gap-4">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter text-black dark:text-white transition-colors duration-500">
+            {project.title}
+          </h1>
+          
           {project.subtitle && (
             <p className="text-[15px] md:text-[14px] lg:text-[17px] leading-snug font-normal italic text-black/50 dark:text-white/50 transition-colors duration-500">
               {project.subtitle}
             </p>
           )}
-          <p className="text-[13px] md:text-[12px] lg:text-[15px] leading-snug font-[475] tracking-tight text-black dark:text-white transition-colors duration-500 whitespace-nowrap">
-            {project.category}
-          </p>
+          
+          <div className="flex items-center gap-2 mt-2">
+            <span className="text-[11px] uppercase tracking-wider text-black/40 dark:text-white/40 font-medium transition-colors duration-500">Type</span>
+            <span className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] italic tracking-tight text-black dark:text-white transition-colors duration-500">
+              {project.category}
+            </span>
+          </div>
         </div>
       </div>
 
