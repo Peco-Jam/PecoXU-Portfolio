@@ -68,7 +68,7 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
         </div>
         
         <div className="flex flex-col gap-4">
-          <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter text-black dark:text-white transition-colors duration-500 whitespace-pre-line">
+          <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.3] font-[500] tracking-tighter text-black dark:text-white transition-colors duration-500 whitespace-pre-line">
             {project.title}
           </h1>
           
@@ -100,10 +100,12 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
             <span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">Role</span>
             <span className="font-normal text-black/60 dark:text-white/60 text-right transition-colors duration-500">{project.role}</span>
           </div>
-          <div className="flex justify-between items-start gap-4">
-            <span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">Organization</span>
-            <span className="font-normal text-black/60 dark:text-white/60 text-right transition-colors duration-500">{project.client}</span>
-          </div>
+          {project.client && (
+            <div className="flex justify-between items-start gap-4">
+              <span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">Organization</span>
+              <span className="font-normal text-black/60 dark:text-white/60 text-right transition-colors duration-500">{project.client}</span>
+            </div>
+          )}
         </div>
       </div>
 

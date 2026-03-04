@@ -29,9 +29,14 @@ export default function Sidebar() {
             referrerPolicy="no-referrer"
           />
         )}
-        <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter mb-4 text-black dark:text-white transition-colors duration-500">
-          {PROFILE.name}
-        </h1>
+        <div className="w-fit">
+          <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter mb-1 text-black dark:text-white transition-colors duration-500">
+            徐雨轩
+          </h1>
+          <p className="text-[12px] md:text-[11px] lg:text-[14px] italic leading-snug font-normal text-black/50 dark:text-white/50 mb-4 transition-colors duration-500">
+            PECO XU
+          </p>
+        </div>
         <p className="text-[15px] md:text-[14px] lg:text-[17px] leading-snug font-normal text-black/50 dark:text-white/50 transition-colors duration-500">{PROFILE.title}</p>
         <p className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 mt-12 md:mt-8 lg:mt-10 text-justify transition-colors duration-500">
           从<span className="text-black dark:text-white font-[450]">浙传</span>到<span className="text-black dark:text-white font-[450]">伦敦 UCL</span>，在<span className="text-black dark:text-white font-[450]">数字媒体领域</span>“打怪升级”多年，也在<span className="text-black dark:text-white font-[450]">腾讯&网易</span>死磕过 <span className="text-black dark:text-white font-[450]">S 级项目</span>——我依然是个热衷新技术的 <span className="text-black dark:text-white font-[450]">ACG 玩家</span>。正试着用<span className="text-black dark:text-white font-[450]">数字叙事</span>的专业逻辑，给内容宣发叠个“<span className="text-black dark:text-white font-[450]">有趣</span>”的 Buff。
@@ -63,12 +68,14 @@ export default function Sidebar() {
 
           {/* 教育经历 */}
           <div>
-            <h3 className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight mb-4 md:mb-3 lg:mb-4 text-black dark:text-white transition-colors duration-500">教育经历</h3>
-            <div className="space-y-1.5 md:space-y-1 lg:space-y-1.5 text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed">
+            <div className="space-y-6 md:space-y-4 lg:space-y-6 text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed">
               {PROFILE.education.map((edu, i) => (
-                <div key={i} className="flex justify-between items-start gap-4">
-                  <span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">{edu.school} · {edu.degree}</span>
-                  <span className="font-normal text-black/60 dark:text-white/60 text-right max-w-[65%] transition-colors duration-500">{edu.major}</span>
+                <div key={i} className="flex flex-col gap-1">
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[14px] md:text-[13px] lg:text-[16px] font-[500] text-black dark:text-white shrink-0 transition-colors duration-500">{edu.school}</span>
+                    <span className="px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/5 text-[11px] md:text-[10px] lg:text-[12px] font-[475] text-black/70 dark:text-white/70 transition-colors duration-500">{edu.degree}</span>
+                  </div>
+                  <span className="font-normal text-black/50 dark:text-white/50 transition-colors duration-500">{edu.major}</span>
                 </div>
               ))}
             </div>

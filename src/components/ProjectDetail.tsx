@@ -142,17 +142,16 @@ export default function ProjectDetail({
 
       <div className="max-w-full mx-auto">
         {/* Work Section */}
-        <div id="work-content" ref={workRef} className="grid grid-cols-2 gap-4 md:gap-6">
+        <div id="work-content" ref={workRef} className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {sortedMedia.map((item, i) => {
             const isLandscape = !item.aspectRatio || (() => {
               const [w, h] = item.aspectRatio.split('/').map(Number);
               return w > h;
             })();
             
-            let spanClass = isLandscape ? 'col-span-2' : 'col-span-1';
-            if (item.type === 'image') {
-              spanClass += ' md:col-span-1';
-            }
+            const spanClass = (item.type === 'video' && isLandscape)
+              ? 'col-span-1 lg:col-span-2'
+              : 'col-span-1 lg:col-span-1';
             
             return (
             <motion.div
