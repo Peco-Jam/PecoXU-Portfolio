@@ -56,12 +56,8 @@ export default function ProjectDetail({
     }
   };
 
-  // Sort media: videos first, then images
-  const sortedMedia = [...project.media].sort((a, b) => {
-    if (a.type === 'video' && b.type === 'image') return -1;
-    if (a.type === 'image' && b.type === 'video') return 1;
-    return 0;
-  });
+  // Use media as is to respect defined order
+  const sortedMedia = project.media;
 
   const handleMediaError = (index: number) => {
     setErrorMedia(prev => new Set(prev).add(index));
@@ -146,17 +142,26 @@ export default function ProjectDetail({
 
       <div className="max-w-full mx-auto">
         {/* Work Section */}
-        <div id="work-content" ref={workRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-4 lg:gap-6">
-          {sortedMedia.map((item, i) => (
+        <div id="work-content" ref={workRef} className="grid grid-cols-2 gap-4 md:gap-6">
+          {sortedMedia.map((item, i) => {
+            const isLandscape = !item.aspectRatio || (() => {
+              const [w, h] = item.aspectRatio.split('/').map(Number);
+              return w > h;
+            })();
+            
+            let spanClass = isLandscape ? 'col-span-2' : 'col-span-1';
+            if (item.type === 'image') {
+              spanClass += ' md:col-span-1';
+            }
+            
+            return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative group rounded-xl overflow-hidden backdrop-blur-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 transition-colors duration-500 ${
-                item.type === 'video' ? 'lg:col-span-2' : 'col-span-1'
-              }`}
+              className={`relative group rounded-xl overflow-hidden backdrop-blur-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 transition-colors duration-500 ${spanClass}`}
             >
               {errorMedia.has(i) ? (
                 <FallbackPlaceholder 
@@ -203,7 +208,8 @@ export default function ProjectDetail({
                 </div>
               )}
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

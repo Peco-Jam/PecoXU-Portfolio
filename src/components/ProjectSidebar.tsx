@@ -68,7 +68,7 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
         </div>
         
         <div className="flex flex-col gap-4">
-          <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter text-black dark:text-white transition-colors duration-500">
+          <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter text-black dark:text-white transition-colors duration-500 whitespace-pre-line">
             {project.title}
           </h1>
           
@@ -121,6 +121,14 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
             {renderFormattedText(project.solution)}
           </div>
         </div>
+        {project.outcome && (
+          <div className="pb-10 md:pb-6 lg:pb-10 border-b border-black/10 dark:border-white/10 transition-colors duration-500">
+            <h3 className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight mb-4 md:mb-3 lg:mb-4 text-black dark:text-white transition-colors duration-500">Impact</h3>
+            <div className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 text-justify transition-colors duration-500">
+              {renderFormattedText(project.outcome)}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="text-[11px] md:text-[10px] lg:text-[12px] leading-relaxed font-normal text-black/40 dark:text-white/40 mt-12 md:mt-8 lg:mt-12 transition-colors duration-500">
