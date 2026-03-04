@@ -8,7 +8,7 @@ export const PROFILE = {
     { company: "Tencent IEG", role: "创意内容", description: "暗区突围、火影忍者" },
     { company: "NetEase Games", role: "视频设计", description: "一梦江湖、第五人格" },
     { company: "CUZ Official B 站", role: "创始人 / 站长", description: "160 万 + 累计播放" },
-    { company: "央视", role: "后期视效包装", description: "国家级重大选题" },
+    { company: "央视融媒", role: "后期视效包装", description: "国家级重大选题" },
   ],
   birthday: "2000 / 01 / 01",
   location: "四川 成都",
@@ -94,7 +94,7 @@ export const CATEGORIES = ["All", "Motion", "Tech Art", "Interactive"];
 export const PROJECTS = [
   {
     id: "1",
-    title: "暗区突围",
+    title: "暗区突围：\n硬核视觉体系",
     subtitle: "Arena Breakout",
     category: "Motion",
     cover: "https://res.cloudinary.com/dyprp4wbq/image/upload/v1772441964/Arena_Breakout_jup4cn.jpg",
@@ -133,7 +133,7 @@ export const PROJECTS = [
       "· **赛事动态可视化主导：** 主导城市赛系列视频的 **Motion Graphics** 设计，通过 **模块化视觉** 重构赛制流程，确保了跨媒介呈现的专业感与品牌张力。\n· **S 级 PV 节奏把控：** 负责“佩恩”角色视频的剪辑节奏与镜头衔接**，运用高标准的 **视听语言** 精准对齐 **IP 监修标准**。",
     outcome: "· **赛事高标准落地：** 成功护航多站大型线下赛事落地，以清晰的逻辑与高级的视觉风格获得业务方高度认可。\n· **百万级现象传播：** 助力角色 PV 实现 B 站单平台播放量突破 **1,000,000+**，成为阶段性爆款内容并显著提升社区活跃度。",
     media: [
-      { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772612045/%E7%81%AB%E5%BD%B1%E6%89%8B%E6%B8%B8_2021%E5%9F%8E%E5%B8%82%E8%B5%9B%E8%B5%9B%E7%A8%8B%E8%B5%9B%E5%88%B6%E5%85%A8%E7%9F%A5%E9%81%93_qhqlxo.mp4', title: '火影忍者 2021城市赛', aspectRatio: '16/9' },
+      { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772612045/%E7%81%AB%E5%BD%B1%E6%89%8B%E6%B8%B8_2021%E5%9F%8E%E5%B8%82%E8%B5%9B%E8%B5%9B%E7%A8%8B%E8%B5%9B%E5%88%B6%E5%85%A8%E7%9F%A5%E9%81%93_qhqlxo.mp4', title: '火影忍者 2021 城市赛', aspectRatio: '16/9' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772612038/1_1_llv6um.jpg', title: '截图1', aspectRatio: '9/16' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772612038/1_2_iozrlz.jpg', title: '截图2', aspectRatio: '9/16' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772612037/1_4_eh5xlq.jpg', title: '截图3', aspectRatio: '9/16' },
@@ -152,10 +152,10 @@ export const PROJECTS = [
     role: "视频设计",
     client: "网易 设计中心",
     challenge:
-      "针对《神都夜行录》等头部项目，需在 **极短生产周期** 内产出高点击率内容以支撑 **千万级** 投放。同时，《一梦江湖》IP 衍生品商业化宣传需通过 **潮流美学** 包装拉近用户距离，驱动品牌转化。",
+      "针对《神都夜行录》等头部项目，需在 **极短生产周期** 内产出高点击率买量视频内容以支撑 **千万级** 投放。同时，《一梦江湖》IP 衍生品商业化宣传需通过 **潮流美学** 包装拉近用户距离，驱动品牌转化。",
     solution:
-      "· **全链路高效生产：** 负责从分镜到后期的 **全链路** 制作，保持 **周均 15 条以上** 的高频产出，稳定支撑多款 S 级项目投放。\n· **潮流视觉包装：** 主导年轻化剪辑节奏，采用 **“黄金 3 秒”** 法则优化视频逻辑，通过高质感画面激发玩家 **购买欲望**。",
-    outcome: "· **千万级投放支撑：** 有力支撑了 **千万级** 市场投放消耗，显著优化了广告投资回报率（**ROI**）。\n· **商业化变现赋能：** 符合潮流趋势的视觉呈现成功赋能 **IP 商业化变现**，大幅提升了衍生产品在 **年轻玩家群体** 中的品牌认可度。",
+      "· **全链路高效生产：** 负责从分镜到后期的 **全链路买量视频制作**，保持 **周均 15 条以上** 的高频产出，稳定支撑多款 S 级项目投放。\n· **潮流视觉包装：** 主导年轻化剪辑节奏，采用 **“黄金 3 秒”** 法则优化视频逻辑，通过高质感画面激发玩家 **购买欲望**。",
+    outcome: "· **千万级投放支撑：** 有力支撑了 **千万级** 市场投放消耗，显著优化了广告投资回报率 (**ROI**)。\n· **商业化变现赋能：** 符合潮流趋势的视觉呈现成功赋能 **IP 商业化变现**，大幅提升了衍生产品在 **年轻玩家群体** 中的品牌认可度。",
     media: [
       { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1771948595/%E4%B8%80%E6%A2%A6%E6%B1%9F%E6%B9%96%E6%BD%AE%E6%B5%81%E5%8D%95%E5%93%81%E4%B8%8A%E7%BA%BF_g4x4da.mp4', title: '一梦江湖潮流单品上线', aspectRatio: '16/9' },
       { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1771948589/%E4%B8%80%E6%A2%A6_%E6%B6%88%E5%A4%B1%E6%A5%BC%E5%85%B0%E5%8F%A4%E5%9B%BD_wdigbs.mp4', title: '消失楼兰古国', aspectRatio: '9/16' },
@@ -322,11 +322,11 @@ export const PROJECTS = [
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633490/4_%E5%9C%BA%E6%99%AF%E6%88%AA%E5%9B%BE_pwnfch.png', title: '场景截图', aspectRatio: '16/9' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633492/5_%E5%9C%BA%E6%99%AF%E6%88%AA%E5%9B%BE_eop5mb.png', title: '场景截图', aspectRatio: '16/9' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633486/6_%E4%B8%BB%E8%8F%9C%E5%8D%95%E7%95%8C%E9%9D%A2_zqmjfr.png', title: '主菜单界面', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633482/a_Concept_Narrative_p0cgmv.png', title: 'Concept Narrative', aspectRatio: '9/16' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633500/b_Concept_Narrative_sovoql.png', title: 'Concept Narrative', aspectRatio: '9/16' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633487/c_Technical_Pipeline_Level_Art_dp8zu5.png', title: 'Technical Pipeline Level Art', aspectRatio: '9/16' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633489/d_Technical_Pipeline_Level_Art_bmlarj.png', title: 'Technical Pipeline Level Art', aspectRatio: '9/16' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633489/e_Interactive_Systems_Logic_o0lhyu.png', title: 'Interactive Systems Logic', aspectRatio: '9/16' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633482/a_Concept_Narrative_p0cgmv.png', title: 'Concept & Narrative 1', aspectRatio: '9/16' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633500/b_Concept_Narrative_sovoql.png', title: 'Concept & Narrative 2', aspectRatio: '9/16' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633487/c_Technical_Pipeline_Level_Art_dp8zu5.png', title: 'Technical Pipeline & Level Art 01', aspectRatio: '9/16' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633489/d_Technical_Pipeline_Level_Art_bmlarj.png', title: 'Technical Pipeline & Level Art 02', aspectRatio: '9/16' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633489/e_Interactive_Systems_Logic_o0lhyu.png', title: 'Interactive Systems & Logic', aspectRatio: '9/16' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633883/f_Result_lqey13.png', title: 'Result', aspectRatio: '9/16' },
     ],
   }

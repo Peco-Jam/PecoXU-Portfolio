@@ -61,21 +61,22 @@ export default function Sidebar() {
           <div>
             <h3 className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight mb-4 md:mb-3 lg:mb-4 text-black dark:text-white transition-colors duration-500">联系方式</h3>
             <div className="flex flex-col gap-1.5 md:gap-1 lg:gap-1.5 text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed">
-              <div className="flex justify-between items-start gap-4"><span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">Tel</span> <span className="font-normal text-black/60 dark:text-white/60 text-right break-all transition-colors duration-500">{PROFILE.phone}</span></div>
-              <div className="flex justify-between items-start gap-4"><span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">Mail</span> <span className="font-normal text-black/60 dark:text-white/60 text-right break-all transition-colors duration-500">{PROFILE.email}</span></div>
+              <div className="flex justify-between items-start gap-4"><span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">电话</span> <span className="font-normal text-black/60 dark:text-white/60 text-right break-all transition-colors duration-500">{PROFILE.phone}</span></div>
+              <div className="flex justify-between items-start gap-4"><span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">邮箱</span> <span className="font-normal text-black/60 dark:text-white/60 text-right break-all transition-colors duration-500">{PROFILE.email}</span></div>
             </div>
           </div>
 
           {/* 教育经历 */}
           <div>
-            <div className="space-y-6 md:space-y-4 lg:space-y-6 text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed">
+            <h3 className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight mb-4 md:mb-3 lg:mb-4 text-black dark:text-white transition-colors duration-500">教育经历</h3>
+            <div className="flex flex-col gap-4 md:gap-3 lg:gap-4 text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed">
               {PROFILE.education.map((edu, i) => (
                 <div key={i} className="flex flex-col gap-1">
-                  <div className="flex justify-between items-center gap-4">
-                    <span className="text-[14px] md:text-[13px] lg:text-[16px] font-[500] text-black dark:text-white shrink-0 transition-colors duration-500">{edu.school}</span>
-                    <span className="px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/5 text-[11px] md:text-[10px] lg:text-[12px] font-[475] text-black/70 dark:text-white/70 transition-colors duration-500">{edu.degree}</span>
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="font-[475] text-black dark:text-white shrink-0 transition-colors duration-500">{edu.school}</span>
+                    <span className="font-normal text-black/60 dark:text-white/60 text-right transition-colors duration-500">{edu.degree}</span>
                   </div>
-                  <span className="font-normal text-black/50 dark:text-white/50 transition-colors duration-500">{edu.major}</span>
+                  <span className="font-normal text-black/60 dark:text-white/60 transition-colors duration-500">{edu.major}</span>
                 </div>
               ))}
             </div>
