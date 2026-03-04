@@ -89,7 +89,7 @@ export const PROFILE = {
   ],
 };
 
-export const CATEGORIES = ["All", "Motion", "Tech Art", "Branding"];
+export const CATEGORIES = ["All", "Motion", "Tech Art", "Interactive"];
 
 export const PROJECTS = [
   {
@@ -172,7 +172,7 @@ export const PROJECTS = [
     id: "4",
     title: "浙传 B 站：\n百万爆款孵化",
     subtitle: "CUZ Bilibili",
-    category: "Branding",
+    category: "Interactive",
     cover: "https://res.cloudinary.com/dyprp4wbq/image/upload/v1772613842/Cover_ooruk8.png",
     year: "2021",
     role: "创始人 / 站长",
@@ -283,10 +283,31 @@ export const PROJECTS = [
     ],
   },
   {
+    id: "10",
+    title: "明日方舟官网临摹：\n视觉重构练习",
+    subtitle: "Arknights UX/UI",
+    category: "Interactive",
+    cover: "https://res.cloudinary.com/dyprp4wbq/image/upload/v1772629894/Cover_zzunud.png",
+    year: "2023",
+    role: "交互设计与视觉重构",
+    challenge: "针对移动端游戏官网信息密度高、交互层级复杂的痛点，探索如何利用**数字展示技术**优化视觉呈现，并构建一套逻辑更清晰、响应更流畅的交互体验。",
+    solution: "· **交互逻辑重塑：** 全程使用 **Ventuz** 进行交互逻辑开发与合成搭建，对原官网的角色介绍、势力档案及加载界面进行了深度的交互复刻与体验升级。\n· **多媒体素材集成：** 协同 **Photoshop** 与 **After Effects** 进行视觉素材的二次加工与动态预处理，确保在实时渲染环境下依然具备极高的视觉还原度。",
+    outcome: "· **专业审美认可：** 作品获得站酷推荐，证明了在保持 **IP** 风格一致性的基础上，个人对复杂交互系统进行重构与视觉优化的专业能力。\n· **技术跨界应用：** 成功将专业数字展示工具（Ventuz）应用于游戏 Web 端交互场景，积累了处理高动态、强交互数字内容的全流程实战经验。",
+    media: [
+      { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772626402/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E5%AE%98%E7%BD%91%E4%B8%B4%E6%91%B9_ubw2xj.mp4', title: '明日方舟官网临摹', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626399/1_%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A1%B5_whagk1.png', title: '网站主页', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626398/2_%E8%BD%BD%E5%85%A5%E7%95%8C%E9%9D%A2_re7ncn.png', title: '载入界面', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626409/3_%E7%9B%B8%E5%85%B3%E5%8A%BF%E5%8A%9B%E9%A1%B5%E9%9D%A2_ikp9r2.png', title: '相关势力页面', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626399/4_%E5%B9%B2%E5%91%98%E4%BB%8B%E7%BB%8D%E9%A1%B5%E9%9D%A2_nrd5cs.png', title: '干员介绍页面', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626400/5_%E7%9B%B8%E5%85%B3%E6%A1%A3%E6%A1%88%E9%A1%B5%E9%9D%A2_eoh6uc.png', title: '相关档案页面', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626400/6_%E5%B7%A5%E7%A8%8B%E6%88%AA%E5%9B%BE_lkllnz.jpg', title: '工程截图', aspectRatio: '16/9' },
+    ],
+  },
+  {
     id: "9",
     title: "失落方舟：\n解谜游戏开发实战",
     subtitle: "Game Design Case Study",
-    category: "Tech Art",
+    category: "Interactive",
     cover: "https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633492/5_%E5%9C%BA%E6%99%AF%E6%88%AA%E5%9B%BE_eop5mb.png",
     year: "2024",
     role: "独立开发",
@@ -307,27 +328,6 @@ export const PROJECTS = [
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633489/d_Technical_Pipeline_Level_Art_bmlarj.png', title: 'Technical Pipeline Level Art', aspectRatio: '9/16' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633489/e_Interactive_Systems_Logic_o0lhyu.png', title: 'Interactive Systems Logic', aspectRatio: '9/16' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772633883/f_Result_lqey13.png', title: 'Result', aspectRatio: '9/16' },
-    ],
-  },
-  {
-    id: "10",
-    title: "明日方舟官网临摹：\n视觉重构练习",
-    subtitle: "Arknights UX/UI",
-    category: "Tech Art",
-    cover: "https://res.cloudinary.com/dyprp4wbq/image/upload/v1772629894/Cover_zzunud.png",
-    year: "2023",
-    role: "交互设计与视觉重构",
-    challenge: "针对移动端游戏官网信息密度高、交互层级复杂的痛点，探索如何利用**数字展示技术**优化视觉呈现，并构建一套逻辑更清晰、响应更流畅的交互体验。",
-    solution: "· **交互逻辑重塑：** 全程使用 **Ventuz** 进行交互逻辑开发与合成搭建，对原官网的角色介绍、势力档案及加载界面进行了深度的交互复刻与体验升级。\n· **多媒体素材集成：** 协同 **Photoshop** 与 **After Effects** 进行视觉素材的二次加工与动态预处理，确保在实时渲染环境下依然具备极高的视觉还原度。",
-    outcome: "· **专业审美认可：** 作品获得站酷推荐，证明了在保持 **IP** 风格一致性的基础上，个人对复杂交互系统进行重构与视觉优化的专业能力。\n· **技术跨界应用：** 成功将专业数字展示工具（Ventuz）应用于游戏 Web 端交互场景，积累了处理高动态、强交互数字内容的全流程实战经验。",
-    media: [
-      { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772626402/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E5%AE%98%E7%BD%91%E4%B8%B4%E6%91%B9_ubw2xj.mp4', title: '明日方舟官网临摹', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626399/1_%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A1%B5_whagk1.png', title: '网站主页', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626398/2_%E8%BD%BD%E5%85%A5%E7%95%8C%E9%9D%A2_re7ncn.png', title: '载入界面', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626409/3_%E7%9B%B8%E5%85%B3%E5%8A%BF%E5%8A%9B%E9%A1%B5%E9%9D%A2_ikp9r2.png', title: '相关势力页面', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626399/4_%E5%B9%B2%E5%91%98%E4%BB%8B%E7%BB%8D%E9%A1%B5%E9%9D%A2_nrd5cs.png', title: '干员介绍页面', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626400/5_%E7%9B%B8%E5%85%B3%E6%A1%A3%E6%A1%88%E9%A1%B5%E9%9D%A2_eoh6uc.png', title: '相关档案页面', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772626400/6_%E5%B7%A5%E7%A8%8B%E6%88%AA%E5%9B%BE_lkllnz.jpg', title: '工程截图', aspectRatio: '16/9' },
     ],
   }
 ];
