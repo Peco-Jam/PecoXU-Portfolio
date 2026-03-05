@@ -211,6 +211,7 @@ export default function ProjectDetail({
                   <video
                     src={item.url}
                     controls
+                    controlsList="nodownload"
                     muted
                     playsInline
                     onError={() => handleMediaError(i)}

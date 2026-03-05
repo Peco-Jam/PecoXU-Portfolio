@@ -68,6 +68,19 @@ export default function App() {
     }
   }, [selectedProjectId]);
 
+  // Global protection against downloading
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'IMG' || target.tagName === 'VIDEO') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => document.removeEventListener('contextmenu', handleContextMenu);
+  }, []);
+
   const handleNameClick = () => {
     if (window.innerWidth < 768 && selectedProjectId) {
       // 在手机端作品页面，点击名字直接跳转到作品信息栏
