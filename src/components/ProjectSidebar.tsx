@@ -33,8 +33,10 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
             {parts.map((part, j) => {
               if (part.startsWith('**') && part.endsWith('**')) {
                 const content = part.slice(2, -2);
+                // 仅针对列表项开头的高亮文本（要点标题）使用 font-[550]，其他高亮保持 font-[500]
+                const isListTitle = isBullet && j === 1 && parts[0].trim() === '';
                 return (
-                  <strong key={j} className="font-[450] text-black dark:text-white transition-colors duration-500">
+                  <strong key={j} className={`${isListTitle ? 'font-[550]' : 'font-[500]'} text-black dark:text-white transition-colors duration-500`}>
                     {content}
                   </strong>
                 );

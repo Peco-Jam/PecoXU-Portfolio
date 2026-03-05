@@ -8,12 +8,15 @@ import TopBanner from "./components/TopBanner";
 import SnakeLightBackground from "./components/SnakeLightBackground";
 import SkeletonScreen from "./components/SkeletonScreen";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { X } from "lucide-react";
+import { PROFILE } from "./data";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
     null,
   );
+  const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
 
   const leftPaneRef = useRef<HTMLDivElement>(null);
   const rightPaneRef = useRef<HTMLDivElement>(null);
@@ -134,7 +137,10 @@ export default function App() {
                     onBack={() => setSelectedProjectId(null)}
                   />
                 ) : (
-                  <Sidebar key="main-sidebar" />
+                  <Sidebar 
+                    key="main-sidebar" 
+                    onAvatarClick={() => setIsAvatarModalOpen(true)}
+                  />
                 )}
               </AnimatePresence>
             </ErrorBoundary>
@@ -162,6 +168,38 @@ export default function App() {
           </main>
         </div>
       </div>
+      {/* Avatar Modal */}
+      <AnimatePresence>
+        {isAvatarModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsAvatarModalOpen(false)}
+            className="fixed inset-0 z-[200] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          >
+            <motion.button
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+              onClick={() => setIsAvatarModalOpen(false)}
+            >
+              <X className="w-8 h-8" />
+            </motion.button>
+            <motion.img
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              src={PROFILE.avatar}
+              alt={PROFILE.name}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   Palette,
   Cpu,
@@ -9,26 +10,36 @@ import {
 } from "lucide-react";
 import { PROFILE, LOGOS } from "../data";
 
-export default function Sidebar() {
+interface SidebarProps {
+  onAvatarClick?: () => void;
+}
+
+export default function Sidebar({ onAvatarClick }: SidebarProps) {
   const [avatarError, setAvatarError] = useState(false);
 
   return (
     <div className="px-4 pt-8 pb-6 md:px-5 md:pt-24 md:pb-5 lg:px-8 lg:pt-24 lg:pb-8 text-[#111] dark:text-white/90 transition-colors duration-500">
       {/* Profile Header */}
       <div className="mb-10 pb-10 md:mb-6 md:pb-6 lg:mb-10 lg:pb-10 border-b border-black/10 dark:border-white/10 transition-colors duration-500">
-        {avatarError ? (
-          <div className="w-24 h-24 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center mb-6 md:mb-4 lg:mb-6 border border-black/10 dark:border-white/10">
-            <User className="w-10 h-10 lg:w-10 lg:h-10 opacity-20" />
-          </div>
-        ) : (
-          <img
-            src={PROFILE.avatar}
-            alt={PROFILE.name}
-            onError={() => setAvatarError(true)}
-            className="w-24 h-24 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-cover mb-6 md:mb-4 lg:mb-6 shadow-lg shadow-black/20 dark:shadow-black/50"
-            referrerPolicy="no-referrer"
-          />
-        )}
+        <div 
+          className="cursor-pointer group relative w-fit"
+          onClick={onAvatarClick}
+        >
+          {avatarError ? (
+            <div className="w-24 h-24 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center mb-6 md:mb-4 lg:mb-6 border border-black/10 dark:border-white/10">
+              <User className="w-10 h-10 lg:w-10 lg:h-10 opacity-20" />
+            </div>
+          ) : (
+            <img
+              src={PROFILE.avatar}
+              alt={PROFILE.name}
+              onError={() => setAvatarError(true)}
+              className="w-24 h-24 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-cover mb-6 md:mb-4 lg:mb-6 shadow-lg shadow-black/20 dark:shadow-black/50 transition-transform duration-300 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+          )}
+          <div className="absolute inset-0 rounded-full bg-black/0 group-hover:bg-black/5 transition-colors duration-300 mb-6 md:mb-4 lg:mb-6" />
+        </div>
         <div className="w-fit">
           <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter mb-1 text-black dark:text-white transition-colors duration-500">
             徐雨轩
@@ -39,7 +50,7 @@ export default function Sidebar() {
         </div>
         <p className="text-[15px] md:text-[14px] lg:text-[17px] leading-snug font-normal text-black/50 dark:text-white/50 transition-colors duration-500">{PROFILE.title}</p>
         <p className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 mt-12 md:mt-8 lg:mt-10 text-justify transition-colors duration-500">
-          从<span className="text-black dark:text-white font-[450]">浙传</span>到<span className="text-black dark:text-white font-[450]">伦敦 UCL</span>，在<span className="text-black dark:text-white font-[450]">数字媒体领域</span>“打怪升级”多年，也在<span className="text-black dark:text-white font-[450]">腾讯&网易</span>死磕过 <span className="text-black dark:text-white font-[450]">S 级项目</span>——我依然是个热衷新技术的 <span className="text-black dark:text-white font-[450]">ACG 玩家</span>。正试着用<span className="text-black dark:text-white font-[450]">数字叙事</span>的专业逻辑，给内容宣发叠个“<span className="text-black dark:text-white font-[450]">有趣</span>”的 Buff。
+          从<span className="text-black dark:text-white font-[450]">杭州浙传</span>到<span className="text-black dark:text-white font-[450]">伦敦 UCL</span>，在<span className="text-black dark:text-white font-[450]">数字媒体领域</span>“打怪升级”多年，也在<span className="text-black dark:text-white font-[450]">腾讯&网易</span>死磕过 <span className="text-black dark:text-white font-[450]">S 级项目</span>——我依然是个热衷新技术的 <span className="text-black dark:text-white font-[450]">ACG 玩家</span>。正试着用<span className="text-black dark:text-white font-[450]">数字叙事</span>的专业逻辑，给内容宣发叠个“<span className="text-black dark:text-white font-[450]">有趣</span>”的 Buff。
         </p>
       </div>
 
@@ -141,7 +152,7 @@ export default function Sidebar() {
                 {i === 2 && <Layers className="w-4 h-4 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4 text-black/50 dark:text-white/50 transition-colors duration-500" />}
                 {cap.category}
               </h3>
-              <ul className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 space-y-1 lg:space-y-1 pl-6 md:pl-5 lg:pl-6 list-disc marker:text-black/30 dark:marker:text-white/30 transition-colors duration-500">
+              <ul className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 space-y-1 lg:space-y-1 pl-6 md:pl-5 lg:pl-6 list-disc marker:text-black dark:marker:text-white transition-colors duration-500">
                 {cap.skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}
@@ -156,7 +167,9 @@ export default function Sidebar() {
         <h2 className="text-[18px] md:text-[20px] lg:text-[24px] leading-tight font-[500] tracking-tight mb-6 md:mb-4 lg:mb-6 text-black dark:text-white transition-colors duration-500">
           Stack.
         </h2>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-4 gap-y-6 md:gap-y-4 lg:gap-y-6">
+        {/* 控制 Stack 区域左右位置的代码位于下方的 grid-cols 定义中：xl:grid-cols-[220px_1fr] */}
+        {/* 其中 220px 决定了第一列的宽度，从而控制第二列（右侧部分）的左对齐位置 */}
+        <div className="grid grid-cols-1 xl:grid-cols-[253px_1fr] gap-x-4 gap-y-6 md:gap-y-4 lg:gap-y-6">
           {PROFILE.techStack.map((tech) => (
             <div key={tech.name} className="flex items-center gap-3 md:gap-2.5 lg:gap-3">
               <div className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8 flex items-center justify-center shrink-0">
@@ -192,7 +205,7 @@ export default function Sidebar() {
             <div className="space-y-6 md:space-y-4 lg:space-y-6 pl-6 md:pl-5 lg:pl-6 border-l border-black/10 dark:border-white/10 transition-colors duration-500">
               {PROFILE.experience.map((exp, i) => (
                 <div key={i} className="relative">
-                  <div className="absolute -left-[29px] md:-left-[25px] lg:-left-[29px] top-[0.65em] w-1 h-1 lg:w-1 lg:h-1 rounded-full bg-black/20 dark:bg-white/20 border-2 border-white dark:border-[#18181b] transition-colors duration-500"></div>
+                  <div className="absolute -left-[29px] md:-left-[25px] lg:-left-[29px] top-[0.65em] w-1 h-1 lg:w-1 lg:h-1 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
                   <div className="text-[14px] md:text-[13px] lg:text-[16px] leading-snug font-[475] text-black dark:text-white mb-2 md:mb-1 lg:mb-2 transition-colors duration-500">
                     <span>{exp.role}</span>
                     <span className="text-black/60 dark:text-white/60 font-normal transition-colors duration-500">・{exp.company}</span>
@@ -216,7 +229,7 @@ export default function Sidebar() {
             <div className="space-y-4 md:space-y-3 lg:space-y-4 pl-6 md:pl-5 lg:pl-6 border-l border-black/10 dark:border-white/10 transition-colors duration-500">
               {PROFILE.awards.map((award, i) => (
                 <div key={i} className="relative">
-                  <div className="absolute -left-[29px] md:-left-[25px] lg:-left-[29px] top-[0.65em] w-1 h-1 lg:w-1 lg:h-1 rounded-full bg-black/20 dark:bg-white/20 border-2 border-white dark:border-[#18181b] transition-colors duration-500"></div>
+                  <div className="absolute -left-[29px] md:-left-[25px] lg:-left-[29px] top-[0.65em] w-1 h-1 lg:w-1 lg:h-1 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
                   <div className="text-[14px] md:text-[13px] lg:text-[16px] leading-snug font-[475] text-black dark:text-white transition-colors duration-500">
                     <span>{award.title}</span>
                     <span className="text-black/60 dark:text-white/60 font-normal transition-colors duration-500">・{award.event}</span>
