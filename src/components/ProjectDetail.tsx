@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { X, Maximize2, ArrowLeft } from "lucide-react";
+import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react";
 import { PROJECTS } from "../data";
 import FallbackPlaceholder from "./FallbackPlaceholder";
 
@@ -16,7 +16,7 @@ export default function ProjectDetail({
   onBack,
 }: ProjectDetailProps) {
   const project = PROJECTS.find((p) => p.id === projectId);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"work" | "info">("work");
   const [errorMedia, setErrorMedia] = useState<Set<number>>(new Set());
   const infoRef = useRef<HTMLDivElement>(null);
@@ -58,13 +58,14 @@ export default function ProjectDetail({
 
   // Use media as is to respect defined order
   const sortedMedia = project.media;
+  const images = sortedMedia.filter((m) => m.type === "image");
 
   const handleMediaError = (index: number) => {
     setErrorMedia(prev => new Set(prev).add(index));
   };
 
   useEffect(() => {
-    if (selectedImage) {
+    if (selectedIndex !== null) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -72,7 +73,44 @@ export default function ProjectDetail({
     return () => {
       document.body.style.overflow = '';
     };
-  }, [selectedImage]);
+  }, [selectedIndex]);
+
+  const touchStart = useRef<number | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === "ArrowLeft" && selectedIndex > 0) {
+        setSelectedIndex(selectedIndex - 1);
+      } else if (e.key === "ArrowRight" && selectedIndex < images.length - 1) {
+        setSelectedIndex(selectedIndex + 1);
+      } else if (e.key === "Escape") {
+        setSelectedIndex(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex, images.length]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart.current === null) return;
+    const touchEnd = e.changedTouches[0].clientY;
+    const diff = touchStart.current - touchEnd;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && selectedIndex !== null && selectedIndex < images.length - 1) {
+        setSelectedIndex(selectedIndex + 1);
+      } else if (diff < 0 && selectedIndex !== null && selectedIndex > 0) {
+        setSelectedIndex(selectedIndex - 1);
+      }
+    }
+    touchStart.current = null;
+  };
 
   return (
     <motion.div
@@ -187,7 +225,10 @@ export default function ProjectDetail({
               ) : (
                 <div 
                   className="relative cursor-zoom-in group/img h-full"
-                  onClick={() => setSelectedImage(item.url)}
+                  onClick={() => {
+                    const idx = images.findIndex(img => img.url === item.url);
+                    if (idx !== -1) setSelectedIndex(idx);
+                  }}
                 >
                   <img
                     src={item.url}
@@ -215,29 +256,69 @@ export default function ProjectDetail({
       {/* Lightbox Modal */}
       {createPortal(
         <AnimatePresence>
-          {selectedImage && (
+          {selectedIndex !== null && images[selectedIndex] && (
             <motion.div
               key="lightbox"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-12 overscroll-none"
-              onClick={() => setSelectedImage(null)}
+              className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-12 overscroll-none"
+              onClick={() => setSelectedIndex(null)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
               <button 
-                className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-10"
-                onClick={() => setSelectedImage(null)}
+                className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-20"
+                onClick={() => setSelectedIndex(null)}
               >
                 <X className="w-8 h-8" strokeWidth={1.5} />
               </button>
+
+              {/* Desktop Navigation Arrows */}
+              {selectedIndex > 0 && (
+                <button 
+                  className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-20"
+                  onClick={(e) => { e.stopPropagation(); setSelectedIndex(selectedIndex - 1); }}
+                >
+                  <ChevronLeft className="w-12 h-12" strokeWidth={1.5} />
+                </button>
+              )}
+              {selectedIndex < images.length - 1 && (
+                <button 
+                  className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-20"
+                  onClick={(e) => { e.stopPropagation(); setSelectedIndex(selectedIndex + 1); }}
+                >
+                  <ChevronRight className="w-12 h-12" strokeWidth={1.5} />
+                </button>
+              )}
+
+              {/* Mobile/Tablet Navigation Arrows */}
+              {selectedIndex > 0 && (
+                <button 
+                  className="lg:hidden absolute top-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors p-4 z-20"
+                  onClick={(e) => { e.stopPropagation(); setSelectedIndex(selectedIndex - 1); }}
+                >
+                  <ChevronUp className="w-12 h-12" strokeWidth={1.5} />
+                </button>
+              )}
+              {selectedIndex < images.length - 1 && (
+                <button 
+                  className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors p-4 z-20"
+                  onClick={(e) => { e.stopPropagation(); setSelectedIndex(selectedIndex + 1); }}
+                >
+                  <ChevronDown className="w-12 h-12" strokeWidth={1.5} />
+                </button>
+              )}
+
               <motion.img
+                key={images[selectedIndex].url}
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                src={selectedImage}
+                src={images[selectedIndex].url}
                 alt="Zoomed view"
-                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl relative z-0"
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl relative z-10"
                 referrerPolicy="no-referrer"
                 onClick={(e) => e.stopPropagation()}
               />
