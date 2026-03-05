@@ -107,7 +107,7 @@ export const PROJECTS = [
       "· **内容脚本创作：** 深度参与S级硬核项目**《暗区突围》官方内容矩阵脚本**，通过**系统化内容逻辑**拆解高门槛玩法，实现从“硬核产品”到“大众认知”的精准转化。\n· **实机动画质量监修：** 重点负责**UE4引擎动画**的质量监修，通过**审美引导与 SOP 确立**，确保外部供应商对齐项目硬核调性。\n· **赛事视觉风格把控：** 独立完成**“黄金周电竞赛事”**的包装迭代，通过专业意见输出与后期修正，确保最终视觉效果**高度契合**品牌硬核调性。",
     outcome: "· **业务价值转化：** 全程支撑项目公测初期的**全渠道营销活动**，构建教学内容矩阵，累计播放量**300,000+**，显著助力玩家留存。\n· **工业化提效：** 确立**监修标准与生产流程**，有效降低了与供应商的沟通成本，使项目整体生产效率提升约 **30%**。",
     media: [
-      { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772440653/1_uuwuvz.mp4', title: '暗区快报  容器系统篇', aspectRatio: '16/9' },
+      { type: 'video', url: 'http://106.14.98.192/d/Portfolio/01%20Arena%20Breakout/%CE%9C%E2%80%99S%20Final%20Lovelive!%20%EF%BD%9E%CE%9C%E2%80%99Sic%20Forever.mp4', title: '暗区快报  容器系统篇', aspectRatio: '16/9' },
       { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772440671/2_whoegk.mp4', title: '暗区突围 黄金周赛', aspectRatio: '16/9' },
       { type: 'video', url: 'https://res.cloudinary.com/dyprp4wbq/video/upload/v1772440667/3_ki8sno.mp4', title: '暗区突围指南', aspectRatio: '16/9' },
       { type: 'image', url: 'https://res.cloudinary.com/dyprp4wbq/image/upload/v1772440651/1_udg0ts.jpg', title: '暗区快报  容器系统篇', aspectRatio: '16/9' },
