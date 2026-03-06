@@ -205,12 +205,13 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
             <div className="space-y-6 md:space-y-4 lg:space-y-6 pl-6 md:pl-5 lg:pl-6 border-l border-black/10 dark:border-white/10 transition-colors duration-500">
               {PROFILE.experience.map((exp, i) => (
                 <div key={i} className="relative">
-                  <div className="absolute -left-[29px] md:-left-[25px] lg:-left-[29px] top-[0.65em] w-1 h-1 lg:w-1 lg:h-1 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
+                  <div className="absolute -left-[27px] md:-left-[23px] lg:-left-[27px] top-[0.65em] w-1.5 h-1.5 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
                   <div className="text-[14px] md:text-[13px] lg:text-[16px] leading-snug font-[475] text-black dark:text-white mb-2 md:mb-1 lg:mb-2 transition-colors duration-500">
                     <span>{exp.role}</span>
-                    <span className="mx-1.5 text-black/40 dark:text-white/40 font-normal">|</span>
-                    <span className="border border-dashed border-blue-400 px-1 rounded-[2px] inline-block leading-none py-0.5">{exp.company}</span>
-                    <span className="text-black/60 dark:text-white/60 font-normal whitespace-nowrap transition-colors duration-500"> · {exp.year}</span>
+                    <span className="mx-1.5 text-black/40 dark:text-white/40 font-normal">·</span>
+                    <span className="text-black/60 dark:text-white/60 font-normal">{exp.company}</span>
+                    <span className="mx-1.5 text-black/40 dark:text-white/40 font-normal">·</span>
+                    <span className="text-black/60 dark:text-white/60 font-normal whitespace-nowrap transition-colors duration-500">{exp.year}</span>
                   </div>
                   {/* @ts-ignore */}
                   {exp.description && (
@@ -230,11 +231,13 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
             <div className="space-y-4 md:space-y-3 lg:space-y-4 pl-6 md:pl-5 lg:pl-6 border-l border-black/10 dark:border-white/10 transition-colors duration-500">
               {PROFILE.awards.map((award, i) => (
                 <div key={i} className="relative">
-                  <div className="absolute -left-[29px] md:-left-[25px] lg:-left-[29px] top-[0.65em] w-1 h-1 lg:w-1 lg:h-1 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
+                  <div className="absolute -left-[27px] md:-left-[23px] lg:-left-[27px] top-[0.65em] w-1.5 h-1.5 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
                   <div className="text-[14px] md:text-[13px] lg:text-[16px] leading-snug font-[475] text-black dark:text-white transition-colors duration-500">
                     <span>{award.title}</span>
-                    <span className="text-black/60 dark:text-white/60 font-normal transition-colors duration-500"> · {award.event}</span>
-                    <span className="text-black/60 dark:text-white/60 font-normal whitespace-nowrap transition-colors duration-500"> · {award.year}</span>
+                    <span className="mx-1.5 text-black/40 dark:text-white/40 font-normal">·</span>
+                    <span className="text-black/60 dark:text-white/60 font-normal transition-colors duration-500">{award.event}</span>
+                    <span className="mx-1.5 text-black/40 dark:text-white/40 font-normal">·</span>
+                    <span className="text-black/60 dark:text-white/60 font-normal whitespace-nowrap transition-colors duration-500">{award.year}</span>
                   </div>
                 </div>
               ))}
