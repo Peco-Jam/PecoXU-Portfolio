@@ -215,7 +215,7 @@ export default function ProjectDetail({
                     muted
                     playsInline
                     onError={() => handleMediaError(i)}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   <div className="absolute bottom-4 left-4 pointer-events-none">
                     <span className="text-white text-[14px] font-[475] tracking-tight bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-lg">
