@@ -42,7 +42,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
         </div>
         <div className="w-fit">
           <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter mb-1 text-black dark:text-white transition-colors duration-500">
-            徐雨轩
+            徐宇轩
           </h1>
           <p className="text-[12px] md:text-[11px] lg:text-[14px] italic leading-snug font-normal text-black/50 dark:text-white/50 mb-4 transition-colors duration-500">
             PECO XU

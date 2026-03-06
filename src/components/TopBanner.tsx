@@ -38,7 +38,7 @@ export default function TopBanner({ onNameClick, onTopClick }: TopBannerProps) {
       <div className="flex items-center gap-3 md:gap-4">
         <button 
           onClick={onNameClick}
-          className="text-[18px] md:text-[24px] leading-tight font-[500] tracking-tight uppercase text-[#111] dark:text-white/90 hover:text-black dark:hover:text-white transition-colors"
+          className="text-[18px] md:text-[24px] leading-tight font-[500] tracking-tight uppercase text-[#111] dark:text-white/90 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-105"
         >
           {PROFILE.name}
         </button>
@@ -47,14 +47,14 @@ export default function TopBanner({ onNameClick, onTopClick }: TopBannerProps) {
       <div className="flex items-center gap-2">
         <button
           onClick={toggleTheme}
-          className="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-colors text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
+          className="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
           aria-label="Toggle theme"
         >
           {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>
         <button 
           onClick={onTopClick}
-          className="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-colors text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
+          className="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
           aria-label="Back to top"
         >
           <ArrowUpToLine className="w-5 h-5" />

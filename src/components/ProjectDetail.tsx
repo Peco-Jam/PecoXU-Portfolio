@@ -187,7 +187,7 @@ export default function ProjectDetail({
               return w > h;
             })();
             
-            const spanClass = (item.type === 'video' && isLandscape)
+            const spanClass = (item.fullWidth || (item.type === 'video' && isLandscape))
               ? 'col-span-1 lg:col-span-2'
               : 'col-span-1 lg:col-span-1';
             
@@ -225,7 +225,8 @@ export default function ProjectDetail({
                 </div>
               ) : (
                 <div 
-                  className="relative cursor-zoom-in group/img h-full"
+                  className="relative cursor-zoom-in group/img w-full overflow-hidden"
+                  style={{ aspectRatio: item.aspectRatio }}
                   onClick={() => {
                     const idx = images.findIndex(img => img.url === item.url);
                     if (idx !== -1) setSelectedIndex(idx);
