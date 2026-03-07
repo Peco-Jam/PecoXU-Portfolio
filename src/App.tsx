@@ -13,15 +13,41 @@ import { PROFILE } from "./data";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
-    null,
-  );
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
 
   const leftPaneRef = useRef<HTMLDivElement>(null);
   const rightPaneRef = useRef<HTMLDivElement>(null);
 
   const isNameClicking = useRef(false);
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#project-')) {
+        setSelectedProjectId(hash.replace('#project-', ''));
+      } else {
+        setSelectedProjectId(null);
+      }
+    };
+
+    // Initial check on load
+    handlePopState();
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const handleProjectSelect = (id: string | null) => {
+    if (id) {
+      window.history.pushState(null, '', `#project-${id}`);
+      setSelectedProjectId(id);
+    } else {
+      window.history.pushState(null, '', window.location.pathname + window.location.search);
+      setSelectedProjectId(null);
+    }
+  };
 
   const scrollToLeftTop = () => {
     if (window.innerWidth >= 768) {
@@ -100,7 +126,7 @@ export default function App() {
 
     // 如果在主页，返回主页并回顶
     isNameClicking.current = true;
-    setSelectedProjectId(null);
+    handleProjectSelect(null);
     
     requestAnimationFrame(() => {
       scrollToLeftTop();
@@ -147,7 +173,7 @@ export default function App() {
                   <ProjectSidebar 
                     key="project-sidebar"
                     projectId={selectedProjectId} 
-                    onBack={() => setSelectedProjectId(null)}
+                    onBack={() => handleProjectSelect(null)}
                   />
                 ) : (
                   <Sidebar 
@@ -171,10 +197,10 @@ export default function App() {
                   <ProjectDetail
                     key="detail"
                     projectId={selectedProjectId}
-                    onBack={() => setSelectedProjectId(null)}
+                    onBack={() => handleProjectSelect(null)}
                   />
                 ) : (
-                  <Home key="home" onProjectSelect={setSelectedProjectId} />
+                  <Home key="home" onProjectSelect={handleProjectSelect} />
                 )}
               </AnimatePresence>
             </ErrorBoundary>
