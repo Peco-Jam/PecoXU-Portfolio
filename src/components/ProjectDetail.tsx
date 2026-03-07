@@ -207,7 +207,7 @@ export default function ProjectDetail({
                   className="aspect-video w-full"
                 />
               ) : item.type === 'video' ? (
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: item.aspectRatio }}>
+                <div className="relative w-full overflow-hidden flex items-center justify-center">
                   <video
                     src={item.url}
                     controls
@@ -215,7 +215,27 @@ export default function ProjectDetail({
                     muted
                     playsInline
                     onError={() => handleMediaError(i)}
-                    className="w-full h-full object-contain"
+                    className="w-full h-auto object-contain"
+                    ref={(el) => {
+                      if (el && !el.dataset.initListeners) {
+                        el.dataset.initListeners = 'true';
+                        
+                        const handleUnmute = () => {
+                          if (el.muted && !el.dataset.hasUnmuted) {
+                            el.muted = false;
+                            el.dataset.hasUnmuted = 'true';
+                          }
+                        };
+
+                        el.addEventListener('fullscreenchange', () => {
+                          if (document.fullscreenElement === el) {
+                            handleUnmute();
+                          }
+                        });
+                        
+                        el.addEventListener('webkitbeginfullscreen', handleUnmute);
+                      }
+                    }}
                   />
                   <div className="absolute bottom-4 left-4 pointer-events-none">
                     <span className="text-white text-[14px] font-[475] tracking-tight bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-lg">
