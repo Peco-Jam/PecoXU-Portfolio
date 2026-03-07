@@ -14,19 +14,46 @@ import { PROFILE } from "./data";
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('portfolio_active_category') || "All";
+    }
+    return "All";
+  });
   const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('portfolio_active_category', activeCategory);
+  }, [activeCategory]);
 
   const leftPaneRef = useRef<HTMLDivElement>(null);
   const rightPaneRef = useRef<HTMLDivElement>(null);
 
   const isNameClicking = useRef(false);
+  const scrollPositionRef = useRef({ rightPane: 0, leftPane: 0, window: 0, rightPaneHeight: 0, windowHeight: 0 });
 
   // Handle browser back/forward buttons
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     const handlePopState = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#project-')) {
-        setSelectedProjectId(hash.replace('#project-', ''));
+        setSelectedProjectId(prev => {
+          if (!prev) {
+            // Capture scroll position before transitioning from Home to Project
+            scrollPositionRef.current = {
+              rightPane: rightPaneRef.current?.scrollTop || 0,
+              leftPane: leftPaneRef.current?.scrollTop || 0,
+              window: window.scrollY || 0,
+              rightPaneHeight: rightPaneRef.current?.scrollHeight || 0,
+              windowHeight: document.documentElement.scrollHeight || 0,
+            };
+          }
+          return hash.replace('#project-', '');
+        });
       } else {
         setSelectedProjectId(null);
       }
@@ -41,6 +68,15 @@ export default function App() {
 
   const handleProjectSelect = (id: string | null) => {
     if (id) {
+      if (!selectedProjectId) {
+        scrollPositionRef.current = {
+          rightPane: rightPaneRef.current?.scrollTop || 0,
+          leftPane: leftPaneRef.current?.scrollTop || 0,
+          window: window.scrollY || 0,
+          rightPaneHeight: rightPaneRef.current?.scrollHeight || 0,
+          windowHeight: document.documentElement.scrollHeight || 0,
+        };
+      }
       window.history.pushState(null, '', `#project-${id}`);
       setSelectedProjectId(id);
     } else {
@@ -80,19 +116,7 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    // 如果是通过点击名字触发的切换，我们跳过这个全局回顶逻辑，由 handleNameClick 自己处理
-    if (isNameClicking.current) {
-      isNameClicking.current = false;
-      return;
-    }
-
-    rightPaneRef.current?.scrollTo(0, 0);
-    leftPaneRef.current?.scrollTo(0, 0);
-    if (window.innerWidth < 768) {
-      window.scrollTo(0, 0);
-    }
-  }, [selectedProjectId]);
+  const minHeightTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Global protection against downloading
   useEffect(() => {
@@ -133,6 +157,58 @@ export default function App() {
     });
   };
 
+  const handleHomeMount = React.useCallback(() => {
+    if (isNameClicking.current) {
+      isNameClicking.current = false;
+      return;
+    }
+
+    if (minHeightTimeoutRef.current) {
+      clearTimeout(minHeightTimeoutRef.current);
+    }
+    
+    const content = rightPaneRef.current?.querySelector('.min-h-full') as HTMLElement;
+    if (content) {
+      const isDesktop = window.innerWidth >= 768;
+      const requiredHeight = isDesktop 
+        ? scrollPositionRef.current.rightPaneHeight 
+        : scrollPositionRef.current.windowHeight;
+      
+      if (requiredHeight > 0) {
+        content.style.minHeight = `${requiredHeight}px`;
+      }
+    }
+
+    // Use a small delay to ensure layout is stable
+    setTimeout(() => {
+      if (window.innerWidth >= 768) {
+        if (rightPaneRef.current) {
+          rightPaneRef.current.scrollTop = scrollPositionRef.current.rightPane;
+        }
+        if (leftPaneRef.current) {
+          leftPaneRef.current.scrollTop = scrollPositionRef.current.leftPane;
+        }
+      } else {
+        window.scrollTo(0, scrollPositionRef.current.window);
+      }
+    }, 50);
+
+    minHeightTimeoutRef.current = setTimeout(() => {
+      const content = rightPaneRef.current?.querySelector('.min-h-full') as HTMLElement;
+      if (content) {
+        content.style.minHeight = '';
+      }
+    }, 1000);
+  }, []);
+
+  const handleProjectMount = React.useCallback(() => {
+    rightPaneRef.current?.scrollTo(0, 0);
+    leftPaneRef.current?.scrollTo(0, 0);
+    if (window.innerWidth < 768) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-[#f5f5f5] dark:bg-[#050505] font-sans text-[#111] dark:text-white/90 transition-colors duration-500">
       
@@ -165,10 +241,10 @@ export default function App() {
           <aside
             id="info-section"
             ref={leftPaneRef}
-            className="relative w-full md:w-[45%] lg:w-[35%] xl:w-[25%] md:h-full md:overflow-y-auto border-r border-black/10 dark:border-white/10 scrollbar-hide backdrop-blur-2xl bg-[#FAFAFA] dark:bg-white/[0.03] transition-colors duration-500"
+            className="relative w-full md:w-[45%] lg:w-[35%] xl:w-[25%] md:h-full md:overflow-y-auto border-r border-black/10 dark:border-white/10 scrollbar-hide backdrop-blur-2xl bg-[#FAFAFA] dark:bg-[#0A0A0A] transition-colors duration-500"
           >
             <ErrorBoundary name="Sidebar">
-              <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait">
                 {selectedProjectId ? (
                   <ProjectSidebar 
                     key="project-sidebar"
@@ -189,7 +265,7 @@ export default function App() {
           <main
             id="right-pane"
             ref={rightPaneRef}
-            className="w-full md:flex-1 md:h-full md:overflow-y-auto scrollbar-hide bg-white/20 dark:bg-black/20 backdrop-blur-[2px] transition-colors duration-500"
+            className="relative w-full md:flex-1 md:h-full md:overflow-y-auto scrollbar-hide bg-[#FAFAFA] dark:bg-[#0A0A0A] transition-colors duration-500"
           >
             <ErrorBoundary name="MainContent">
               <AnimatePresence mode="wait">
@@ -198,9 +274,16 @@ export default function App() {
                     key="detail"
                     projectId={selectedProjectId}
                     onBack={() => handleProjectSelect(null)}
+                    onMount={handleProjectMount}
                   />
                 ) : (
-                  <Home key="home" onProjectSelect={handleProjectSelect} />
+                  <Home 
+                    key="home" 
+                    activeCategory={activeCategory}
+                    setActiveCategory={setActiveCategory}
+                    onProjectSelect={handleProjectSelect} 
+                    onMount={handleHomeMount}
+                  />
                 )}
               </AnimatePresence>
             </ErrorBoundary>

@@ -9,11 +9,13 @@ interface ProjectDetailProps {
   key?: string;
   projectId: string;
   onBack: () => void;
+  onMount?: () => void;
 }
 
 export default function ProjectDetail({
   projectId,
   onBack,
+  onMount,
 }: ProjectDetailProps) {
   const project = PROJECTS.find((p) => p.id === projectId);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -21,6 +23,10 @@ export default function ProjectDetail({
   const [errorMedia, setErrorMedia] = useState<Set<number>>(new Set());
   const infoRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
+
+  React.useLayoutEffect(() => {
+    if (onMount) onMount();
+  }, []);
 
   // Intersection Observer to update active tab on scroll
   useEffect(() => {
@@ -114,11 +120,11 @@ export default function ProjectDetail({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.4 }}
-      className="min-h-full bg-transparent pb-6 md:pb-5 lg:pb-8 pt-20 md:pt-24 lg:pt-24 px-4 md:px-5 lg:px-8"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="min-h-full bg-transparent pb-6 md:pb-5 lg:pb-8 pt-20 md:pt-24 lg:pt-24 px-4 md:px-5 lg:px-8 w-full"
     >
       {/* Mobile Navigation */}
       <div className="md:hidden z-30 mb-6 bg-transparent pt-1 pb-1">
@@ -140,37 +146,20 @@ export default function ProjectDetail({
               <div className="relative flex items-center">
                 <button
                   onClick={() => scrollToSection("work")}
-                  className={`relative z-10 px-6 py-1.5 rounded-full text-[12px] font-medium transition-colors duration-300 ${
-                    activeTab === "work"
-                      ? "text-zinc-900 dark:text-white"
-                      : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
-                  }`}
+                  className="relative z-10 px-6 py-1.5 rounded-full text-[12px] font-medium transition-colors duration-300 text-zinc-900 dark:text-white"
                 >
                   Work
-                  {activeTab === "work" && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 bg-white dark:bg-zinc-800 rounded-full shadow-sm -z-10"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 bg-white dark:bg-zinc-800 rounded-full shadow-sm -z-10"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
                 </button>
                 <button
                   onClick={() => scrollToSection("info")}
-                  className={`relative z-10 px-6 py-1.5 rounded-full text-[12px] font-medium transition-colors duration-300 ${
-                    activeTab === "info"
-                      ? "text-zinc-900 dark:text-white"
-                      : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
-                  }`}
+                  className="relative z-10 px-6 py-1.5 rounded-full text-[12px] font-medium transition-colors duration-300 text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
                 >
                   Info
-                  {activeTab === "info" && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 bg-white dark:bg-zinc-800 rounded-full shadow-sm -z-10"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
                 </button>
               </div>
             </div>

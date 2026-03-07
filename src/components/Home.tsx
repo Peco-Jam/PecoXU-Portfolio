@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CATEGORIES, PROJECTS } from "../data";
 import FallbackPlaceholder from "./FallbackPlaceholder";
 
 interface HomeProps {
   key?: string;
+  activeCategory: string;
+  setActiveCategory: (cat: string) => void;
   onProjectSelect: (id: string) => void;
+  onMount?: () => void;
 }
 
-export default function Home({ onProjectSelect }: HomeProps) {
-  const [activeCategory, setActiveCategory] = useState("All");
+export default function Home({ activeCategory, setActiveCategory, onProjectSelect, onMount }: HomeProps) {
   const [errorProjects, setErrorProjects] = useState<Set<string>>(new Set());
+
+  useLayoutEffect(() => {
+    if (onMount) onMount();
+  }, []);
 
   const filteredProjects =
     activeCategory === "All"
@@ -23,11 +29,11 @@ export default function Home({ onProjectSelect }: HomeProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4 }}
-      className="px-4 md:px-5 lg:px-8 pt-20 md:pt-24 lg:pt-24 pb-6 md:pb-5 lg:pb-8 min-h-full flex flex-col"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="px-4 md:px-5 lg:px-8 pt-20 md:pt-24 lg:pt-24 pb-6 md:pb-5 lg:pb-8 min-h-full flex flex-col w-full"
     >
       {/* Filter */}
       <div className="flex flex-wrap gap-4 md:gap-5 lg:gap-6 mb-6 md:mb-8 lg:mb-10">
