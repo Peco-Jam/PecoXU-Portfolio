@@ -53,7 +53,7 @@ export default function ProjectSidebar({ projectId, onBack }: ProjectSidebarProp
     <motion.div 
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
+      exit={{ opacity: 0, transition: { duration: 0 } }}
       transition={{ duration: 0.4 }}
       className="px-4 pt-6 pb-6 md:px-5 md:pt-24 md:pb-5 lg:px-8 lg:pt-24 lg:pb-8 text-[#111] dark:text-white/90 transition-colors duration-500"
     >

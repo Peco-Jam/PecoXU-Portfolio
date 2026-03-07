@@ -122,7 +122,7 @@ export default function ProjectDetail({
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: 0, transition: { duration: 0 } }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className="min-h-full bg-transparent pb-6 md:pb-5 lg:pb-8 pt-20 md:pt-24 lg:pt-24 px-4 md:px-5 lg:px-8 w-full"
     >

@@ -2,7 +2,7 @@ export const PROFILE = {
   name: "PECO XU",
   title: "Content Producer | Technical Artist",
   quote: "从杭州浙传到伦敦 UCL，在数字媒体领域“打怪升级”多年，也在腾讯&网易死磕过 S 级项目——我依然是个热衷新技术的 ACG 玩家。正试着用数字叙事的专业逻辑，给内容宣发叠个“有趣”的 Buff。",
-  avatar: "https://video.pecoxu.me/d/Portfolio/Pic.png",
+  avatar: "https://video.pecoxu.me/d/Portfolio/Kotori.png",
   bio: "我热衷于S 级项目中死磕视觉细节，也习惯在高频次产出中寻找商业平衡。曾带领过数十人团队从 0 到 1 做出过百万播放。比起重复劳动，我更想用新工具和新技术玩点不一样的内容。",
   aboutHighlights: [
     { company: "Tencent IEG", role: "创意内容策划", description: "暗区突围、火影忍者" },

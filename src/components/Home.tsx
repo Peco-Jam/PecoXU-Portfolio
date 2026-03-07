@@ -31,7 +31,7 @@ export default function Home({ activeCategory, setActiveCategory, onProjectSelec
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: 0, transition: { duration: 0 } }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className="px-4 md:px-5 lg:px-8 pt-20 md:pt-24 lg:pt-24 pb-6 md:pb-5 lg:pb-8 min-h-full flex flex-col w-full"
     >
@@ -52,16 +52,14 @@ export default function Home({ activeCategory, setActiveCategory, onProjectSelec
         ))}
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div 
-          key={activeCategory}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-          className="w-full"
-        >
-          {/* Desktop Layout (lg and up) */}
+      <motion.div 
+        key={activeCategory}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="w-full"
+      >
+        {/* Desktop Layout (lg and up) */}
           <div className="hidden lg:flex flex-row gap-6 items-stretch">
             {[
               activeCategory === "All" 
@@ -152,8 +150,7 @@ export default function Home({ activeCategory, setActiveCategory, onProjectSelec
               </div>
             ))}
           </div>
-        </motion.div>
-      </AnimatePresence>
+      </motion.div>
     </motion.div>
   );
 }

@@ -18,7 +18,13 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
   const [avatarError, setAvatarError] = useState(false);
 
   return (
-    <div className="px-4 pt-8 pb-6 md:px-5 md:pt-24 md:pb-5 lg:px-8 lg:pt-24 lg:pb-8 text-[#111] dark:text-white/90 transition-colors duration-500">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0 } }}
+      transition={{ duration: 0.3 }}
+      className="px-4 pt-8 pb-6 md:px-5 md:pt-24 md:pb-5 lg:px-8 lg:pt-24 lg:pb-8 text-[#111] dark:text-white/90 transition-colors duration-500"
+    >
       {/* Profile Header */}
       <div className="mb-10 pb-10 md:mb-6 md:pb-6 lg:mb-10 lg:pb-10 border-b border-black/10 dark:border-white/10 transition-colors duration-500">
         <div 
@@ -249,6 +255,6 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
       <div className="text-[11px] md:text-[10px] lg:text-[12px] leading-relaxed font-normal text-black/40 dark:text-white/40 mt-6 md:mt-8 lg:mt-12 transition-colors duration-500">
         © {new Date().getFullYear()} <strong className="font-[475]">{PROFILE.name}.</strong> All rights reserved.
       </div>
-    </div>
+    </motion.div>
   );
 }

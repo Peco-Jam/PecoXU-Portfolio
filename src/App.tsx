@@ -179,19 +179,17 @@ export default function App() {
       }
     }
 
-    // Use a small delay to ensure layout is stable
-    setTimeout(() => {
-      if (window.innerWidth >= 768) {
-        if (rightPaneRef.current) {
-          rightPaneRef.current.scrollTop = scrollPositionRef.current.rightPane;
-        }
-        if (leftPaneRef.current) {
-          leftPaneRef.current.scrollTop = scrollPositionRef.current.leftPane;
-        }
-      } else {
-        window.scrollTo(0, scrollPositionRef.current.window);
+    // Synchronous scroll restoration
+    if (window.innerWidth >= 768) {
+      if (rightPaneRef.current) {
+        rightPaneRef.current.scrollTop = scrollPositionRef.current.rightPane;
       }
-    }, 50);
+      if (leftPaneRef.current) {
+        leftPaneRef.current.scrollTop = scrollPositionRef.current.leftPane;
+      }
+    } else {
+      window.scrollTo(0, scrollPositionRef.current.window);
+    }
 
     minHeightTimeoutRef.current = setTimeout(() => {
       const content = rightPaneRef.current?.querySelector('.min-h-full') as HTMLElement;
