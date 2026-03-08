@@ -1,5 +1,5 @@
 export const PROFILE = {
-  name: "PECO XU",
+  name: "徐拉拉",
   title: "Content Producer | Technical Artist",
   quote: "从杭州浙传到伦敦 UCL，在数字媒体领域“打怪升级”多年，也在腾讯&网易死磕过 S 级项目——我依然是个热衷新技术的 ACG 玩家。正试着用数字叙事的专业逻辑，给内容宣发叠个“有趣”的 Buff。",
   avatar: "https://video.pecoxu.me/d/Portfolio/Kotori.png",
