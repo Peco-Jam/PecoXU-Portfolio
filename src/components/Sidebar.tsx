@@ -48,7 +48,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
         </div>
         <div className="w-fit">
           <h1 className="text-[32px] md:text-[30px] lg:text-[44px] leading-[1.1] font-[500] tracking-tighter mb-1 text-black dark:text-white transition-colors duration-500">
-            徐拉拉
+            徐宇轩
           </h1>
           <p className="text-[12px] md:text-[11px] lg:text-[14px] italic leading-snug font-normal text-black/50 dark:text-white/50 mb-4 transition-colors duration-500">
             PECO XU
@@ -176,22 +176,32 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
         {/* 控制 Stack 区域左右位置的代码位于下方的 grid-cols 定义中：xl:grid-cols-[220px_1fr] */}
         {/* 其中 220px 决定了第一列的宽度，从而控制第二列（右侧部分）的左对齐位置 */}
         <div className="grid grid-cols-1 xl:grid-cols-[253px_1fr] gap-x-4 gap-y-6 md:gap-y-4 lg:gap-y-6">
-          {PROFILE.techStack.map((tech) => (
-            <div key={tech.name} className="flex items-center gap-3 md:gap-2.5 lg:gap-3">
-              <div className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8 flex items-center justify-center shrink-0">
-                <img 
-                  src={tech.icon} 
-                  alt={tech.name} 
-                  className={`object-contain rounded-[4px] lg:rounded-[4px] w-full h-full ${tech.name === 'Unreal Engine 5' || tech.name === 'Framer' ? 'dark:invert' : ''} transition-all duration-500`}
-                  referrerPolicy="no-referrer"
-                />
+          {PROFILE.techStack.map((tech) => {
+            let orderClass = '';
+            if (tech.name === 'Photoshop') orderClass = 'md:order-1';
+            else if (tech.name === 'After Effects') orderClass = 'md:order-2';
+            else if (tech.name === 'Blender') orderClass = 'md:order-3';
+            else if (tech.name === 'Unreal Engine 5') orderClass = 'md:order-4';
+            else if (tech.name === 'ComfyUI') orderClass = 'md:order-5';
+            else if (tech.name === 'Framer') orderClass = 'md:order-6';
+
+            return (
+              <div key={tech.name} className={`flex items-center gap-3 md:gap-2.5 lg:gap-3 ${orderClass}`}>
+                <div className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8 flex items-center justify-center shrink-0">
+                  <img 
+                    src={tech.icon} 
+                    alt={tech.name} 
+                    className={`object-contain rounded-[4px] lg:rounded-[4px] w-full h-full ${tech.name === 'Unreal Engine 5' || tech.name === 'Framer' ? 'dark:invert' : ''} transition-all duration-500`}
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight text-black dark:text-white truncate transition-colors duration-500">{tech.name}</div>
+                  <div className="text-[13px] md:text-[12px] lg:text-[15px] leading-relaxed font-normal text-black/60 dark:text-white/60 truncate transition-colors duration-500">{tech.usage}</div>
+                </div>
               </div>
-              <div className="min-w-0">
-                <div className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight text-black dark:text-white truncate transition-colors duration-500">{tech.name}</div>
-                <div className="text-[13px] md:text-[12px] lg:text-[15px] leading-relaxed font-normal text-black/60 dark:text-white/60 truncate transition-colors duration-500">{tech.usage}</div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <div className="text-center mt-8 md:mt-5 lg:mt-8 text-[13px] md:text-[12px] lg:text-[15px] leading-relaxed font-normal text-black/40 dark:text-white/40 opacity-65 transition-colors duration-500">
           and more ...

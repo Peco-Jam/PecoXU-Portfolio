@@ -1,8 +1,8 @@
 export const PROFILE = {
-  name: "徐拉拉",
+  name: "PECO XU",
   title: "Content Producer | Technical Artist",
   quote: "从杭州浙传到伦敦 UCL，在数字媒体领域“打怪升级”多年，也在腾讯&网易死磕过 S 级项目——我依然是个热衷新技术的 ACG 玩家。正试着用数字叙事的专业逻辑，给内容宣发叠个“有趣”的 Buff。",
-  avatar: "https://video.pecoxu.me/d/Portfolio/Kotori.png",
+  avatar: "https://video.pecoxu.me/d/Portfolio/Pic.png",
   bio: "我热衷于S 级项目中死磕视觉细节，也习惯在高频次产出中寻找商业平衡。曾带领过数十人团队从 0 到 1 做出过百万播放。比起重复劳动，我更想用新工具和新技术玩点不一样的内容。",
   aboutHighlights: [
     { company: "Tencent IEG", role: "创意内容策划", description: "暗区突围、火影忍者" },
@@ -39,10 +39,10 @@ export const PROFILE = {
   ],
   techStack: [
     { name: "Photoshop", icon: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772283874/Adobe_Photoshop_CC_icon_koelqy.png", usage: "图片处理" },
-    { name: "Blender", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg", usage: "三维建模" },
     { name: "After Effects", icon: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772283874/Adobe_After_Effects_CC_icon_tlf1o5.png", usage: "特效制作" },
-    { name: "ComfyUI", icon: "data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='4' width='6' height='6' rx='1' fill='%233B82F6'/%3E%3Crect x='16' y='4' width='6' height='6' rx='1' fill='%2310B981'/%3E%3Crect x='9' y='14' width='6' height='6' rx='1' fill='%238B5CF6'/%3E%3Cpath d='M5 10V12C5 13.1046 5.89543 14 7 14H9' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M19 10V12C19 13.1046 18.1046 14 17 14H15' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E", usage: "AI工具" },
+    { name: "Blender", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg", usage: "三维建模" },
     { name: "Unreal Engine 5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg", usage: "游戏引擎" },
+    { name: "ComfyUI", icon: "data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='4' width='6' height='6' rx='1' fill='%233B82F6'/%3E%3Crect x='16' y='4' width='6' height='6' rx='1' fill='%2310B981'/%3E%3Crect x='9' y='14' width='6' height='6' rx='1' fill='%238B5CF6'/%3E%3Cpath d='M5 10V12C5 13.1046 5.89543 14 7 14H9' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M19 10V12C19 13.1046 18.1046 14 17 14H15' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E", usage: "AI工具" },
     { name: "Framer", icon: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z'/%3E%3C/svg%3E", usage: "网页设计" },
   ],
   experience: [
@@ -50,13 +50,13 @@ export const PROFILE = {
       role: "技术美术",
       company: "CIGA GameJam",
       year: "2022 — 2023",
-      description: "连续两年参与 48h 高强度游戏开发挑战，负责游戏引擎内的资源集成与跨职能研发协作。独立完成实机演示 PV 的视觉包装与剪辑，助力团队在极短时间内实现高品质 Demo 交付与路演展示。"
+      description: "连续两年参与 48h 高强度游戏开发挑战，负责游戏引擎内的资源集成与跨职能研发协作。独立完成实机演示 PV 的剪辑与视觉包装，助力团队在极短时间内实现高品质 Demo 交付与路演展示。"
     },
     {
       role: "创意内容策划",
       company: "腾讯互娱（IEG）",
       year: "2021",
-      description: "参与《暗区突围》、《火影忍者手游》等 S 级项目首发，主导 UE4 动画 PV 监修并严控视听表现，对齐顶级 IP 视觉标准。主导电竞赛事 Motion Graphics 动态包装，深度参与百万播放角色 PV 剪辑与工作室品牌 Logo 动态升级。"
+      description: "参与《暗区突围》、《火影忍者手游》等 S 级项目宣发，主导 UE4 动画 PV 监修并严控视听表现，对齐顶级 IP 视觉标准。主导电竞赛事 Motion Graphics 动态包装，深度参与百万播放角色 PV 剪辑与工作室品牌 Logo 动态升级。"
     },
     {
       role: "视频设计",

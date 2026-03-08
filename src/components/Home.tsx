@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CATEGORIES, PROJECTS } from "../data";
 import FallbackPlaceholder from "./FallbackPlaceholder";
@@ -13,10 +13,27 @@ interface HomeProps {
 
 export default function Home({ activeCategory, setActiveCategory, onProjectSelect, onMount }: HomeProps) {
   const [errorProjects, setErrorProjects] = useState<Set<string>>(new Set());
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (onMount) onMount();
   }, []);
+
+  // Prevent layout collapse flash when switching categories on mobile
+  useEffect(() => {
+    if (containerRef.current) {
+      const currentHeight = containerRef.current.offsetHeight;
+      containerRef.current.style.minHeight = `${currentHeight}px`;
+      
+      const timeout = setTimeout(() => {
+        if (containerRef.current) {
+          containerRef.current.style.minHeight = '';
+        }
+      }, 600); // Wait for exit animation (0.3s) + enter animation/image load
+
+      return () => clearTimeout(timeout);
+    }
+  }, [activeCategory]);
 
   const filteredProjects =
     activeCategory === "All"
@@ -29,6 +46,7 @@ export default function Home({ activeCategory, setActiveCategory, onProjectSelec
 
   return (
     <motion.div
+      ref={containerRef}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, transition: { duration: 0 } }}
@@ -52,13 +70,15 @@ export default function Home({ activeCategory, setActiveCategory, onProjectSelec
         ))}
       </div>
 
-      <motion.div 
-        key={activeCategory}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="w-full"
-      >
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={activeCategory}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="w-full"
+        >
         {/* Desktop Layout (lg and up) */}
           <div className="hidden lg:flex flex-row gap-6 items-stretch">
             {[
@@ -150,7 +170,8 @@ export default function Home({ activeCategory, setActiveCategory, onProjectSelec
               </div>
             ))}
           </div>
-      </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </motion.div>
   );
 }
