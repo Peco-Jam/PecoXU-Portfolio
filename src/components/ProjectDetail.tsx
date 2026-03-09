@@ -245,7 +245,8 @@ export default function ProjectDetail({
                     src={item.url}
                     alt={item.title}
                     onError={() => handleMediaError(i)}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
+                    className={`w-full h-full object-cover transition-transform duration-700 ${ (item as any).scale ? '' : 'group-hover/img:scale-105'}`}
+                    style={(item as any).scale ? { transform: `scale(${(item as any).scale})` } : {}}
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors duration-300 flex items-center justify-center">

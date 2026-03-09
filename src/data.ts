@@ -1,13 +1,13 @@
 export const PROFILE = {
   name: "PECO XU",
   title: "Content Producer | Technical Artist",
-  quote: "从杭州浙传到伦敦 UCL，在数字媒体领域“打怪升级”多年，也在腾讯&网易死磕过 S 级项目——我依然是个热衷新技术的 ACG 玩家。正试着用数字叙事的专业逻辑，给内容宣发叠个“有趣”的 Buff。",
+  quote: "从杭州浙传到伦敦 UCL，在数字媒体领域“打怪升级”多年，在腾讯&网易死磕过 S 级项目——我依然是个热衷新技术的 ACG 玩家。正试着用数字叙事的专业逻辑，给内容宣发叠个“有趣”的 Buff。",
   avatar: "https://video.pecoxu.me/d/Portfolio/Pic.png",
   bio: "我热衷于S 级项目中死磕视觉细节，也习惯在高频次产出中寻找商业平衡。曾带领过数十人团队从 0 到 1 做出过百万播放。比起重复劳动，我更想用新工具和新技术玩点不一样的内容。",
   aboutHighlights: [
     { company: "Tencent IEG", role: "创意内容策划", description: "暗区突围、火影忍者" },
-    { company: "NetEase Games", role: "视频设计", description: "一梦江湖、第五人格" },
-    { company: "CUZ Official B 站", role: "创始人 / 站长", description: "160 万 + 累计播放" },
+    { company: "NetEase Games", role: "视频设计", description: "一梦江湖、神都夜行录" },
+    { company: "CUZ 官方 B 站", role: "创始人 / 站长", description: "160 万 + 累计播放" },
     { company: "央视融媒", role: "后期视效包装", description: "国家级重大选题" },
   ],
   birthday: "2000 / 03 / 31",
@@ -34,23 +34,23 @@ export const PROFILE = {
     },
     {
       category: "内容编导",
-      skills: ["百万流量孵化", "ACG 核心圈层洞察", "脚本与分镜撰写", "全案编导执行力"],
+      skills: ["百万流量孵化", "ACG 核心圈层洞察", "脚本与分镜撰写", "全案编导执行"],
     },
   ],
   techStack: [
-    { name: "Photoshop", icon: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772283874/Adobe_Photoshop_CC_icon_koelqy.png", usage: "图片处理" },
-    { name: "After Effects", icon: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772283874/Adobe_After_Effects_CC_icon_tlf1o5.png", usage: "特效制作" },
+    { name: "Photoshop", icon: "https://video.pecoxu.me/d/WebSupport/iCon/Adobe_Photoshop_CC_icon.png", usage: "图片处理" },
+    { name: "After Effects", icon: "https://video.pecoxu.me/d/WebSupport/iCon/Adobe_After_Effects_CC_icon.png", usage: "特效制作" },
     { name: "Blender", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg", usage: "三维建模" },
     { name: "Unreal Engine 5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg", usage: "游戏引擎" },
-    { name: "ComfyUI", icon: "data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='4' width='6' height='6' rx='1' fill='%233B82F6'/%3E%3Crect x='16' y='4' width='6' height='6' rx='1' fill='%2310B981'/%3E%3Crect x='9' y='14' width='6' height='6' rx='1' fill='%238B5CF6'/%3E%3Cpath d='M5 10V12C5 13.1046 5.89543 14 7 14H9' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M19 10V12C19 13.1046 18.1046 14 17 14H15' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E", usage: "AI工具" },
-    { name: "Framer", icon: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z'/%3E%3C/svg%3E", usage: "网页设计" },
+    { name: "Gemini", icon: "https://video.pecoxu.me/d/WebSupport/iCon/Google_Gemini_icon.svg", usage: "AI大模型" },
+    { name: "ComfyUI", icon: "data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='4' width='6' height='6' rx='1' fill='%233B82F6'/%3E%3Crect x='16' y='4' width='6' height='6' rx='1' fill='%2310B981'/%3E%3Crect x='9' y='14' width='6' height='6' rx='1' fill='%238B5CF6'/%3E%3Cpath d='M5 10V12C5 13.1046 5.89543 14 7 14H9' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M19 10V12C19 13.1046 18.1046 14 17 14H15' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E", usage: "AI绘画" },
   ],
   experience: [
     {
       role: "技术美术",
-      company: "CIGA GameJam",
+      company: "CiGA Game Jam",
       year: "2022 — 2023",
-      description: "连续两年参与 48h 高强度游戏开发挑战，负责游戏引擎内的资源集成与跨职能研发协作。独立完成实机演示 PV 的剪辑与视觉包装，助力团队在极短时间内实现高品质 Demo 交付与路演展示。"
+      description: "连续参与 48h 高强度游戏开发挑战，负责游戏引擎内的资源集成与跨职能研发协作。独立完成实机演示 PV 的剪辑与视觉包装，助力团队在极短时间内实现高品质 Demo 交付与路演展示。"
     },
     {
       role: "创意内容策划",
@@ -62,13 +62,13 @@ export const PROFILE = {
       role: "视频设计",
       company: "网易互娱",
       year: "2020",
-      description: "负责《一梦江湖》等头部游戏项目商业化买量视频的从分镜到后期的全链路制作。搭建高效的个人产出管线，保持周均 15 条以上的高质量物料输出，突出视觉表现力有力支撑市场投放消耗。"
+      description: "主导《一梦江湖》等头部项目买量视频全链路产出。搭建高效的个人产出管线，保持周均 15 条以上的高质量物料输出，突出视觉表现。有力支撑市场投放消耗。"
     },
     {
       role: "站长 / 创始人",
       company: "浙传官方 Bilibili",
       year: "2019 — 2021",
-      description: "从 0 到 1 统筹孵化官方新媒体内容矩阵，组建并管理 50 人以上全媒体运营团队。搭建高效的内容生产 SOP 体系，主导千万级头部联动企划摄制，实现账号粉丝自然增长与超 160 万 + 累计播放量。"
+      description: "从 0 到 1 统筹孵化官方新媒体内容矩阵，组建并管理 50 人以上全媒体运营团队。搭建高效内容生产 SOP 体系，统筹百万级官方联动企划，主导全链路内容摄制。实现账号粉丝自然增长与超 160 万累计播放量。"
     },
     {
       role: "后期视效包装",
@@ -105,7 +105,7 @@ export const PROJECTS = [
       "**硬核 S 级产品**公测初期**上手门槛极高**，玩家亟需系统化的**官方教学资源**辅助认知与留存。同时，**外部供应商**对项目调性理解不足，需在高频宣发中强化**风格管控与监修**，确保赛事包装与**品牌视觉**高度契合。",
     solution:
       "· **内容脚本创作：** 深度参与S级硬核项目**《暗区突围》官方内容矩阵脚本**，通过**系统化内容逻辑**拆解高门槛玩法，实现从“硬核产品”到“大众认知”的精准转化。\n· **实机动画质量监修：** 重点负责**UE4引擎动画**的质量监修，通过**审美引导与 SOP 确立**，确保外部供应商对齐项目硬核调性。\n· **赛事视觉风格把控：** 独立完成**“黄金周电竞赛事”**的包装迭代，通过专业意见输出与后期修正，确保最终视觉效果**高度契合**品牌硬核调性。",
-    outcome: "· **业务价值转化：** 全程支撑项目公测初期的**全渠道营销活动**，构建教学内容矩阵，累计播放量**300,000+**，显著助力玩家留存。\n· **工业化提效：** 确立**监修标准与生产流程**，有效降低了与供应商的沟通成本，使项目整体生产效率提升约 **30%**。",
+    outcome: "· **业务价值转化：** 全程支撑项目公测初期的**全渠道营销活动**，构建教学内容矩阵，累计播放量**300,000+**，有效降低玩家上手门槛。\n· **工业化提效：** 确立**监修标准与生产流程**，有效降低了与供应商的沟通成本，使项目整体生产效率提升约 **30%**。",
     media: [
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/01%20Arena%20Breakout/video1_1.mp4', title: '暗区快报 容器系统篇', aspectRatio: '16/9' },
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/01%20Arena%20Breakout/video1_2.mp4', title: '暗区突围 黄金周赛', aspectRatio: '16/9' },
@@ -128,7 +128,7 @@ export const PROJECTS = [
     role: "创意内容策划",
     client: "腾讯 IEG 魔方工作室群",
     challenge:
-      "针对顶级二次元 IP 的线下复杂赛制与核心角色宣发，需在确保 **IP 调性一致性**的前提下，实现赛制信息的**极简传导**。同时，S 级核心角色宣发对**视听张力**要求极高，需通过极致的**节奏把控**还原角色压迫感，并有效驱动**社区自发传播**。",
+      "针对顶级二次元 IP 的线下复杂赛制与核心角色宣发，需在确保 **IP 调性一致性**的前提下，实现赛制信息的**极简传导**。同时，S 级核心角色宣发对**视听张力**要求极高，需通过极致的**节奏把控**还原角色特点，有效驱动**社区自发传播**。",
     solution:
       "· **赛事动态可视化监修：** 全程监修城市赛系列视频的 **Motion Graphics** 设计，通过**模块化视觉**重构赛制流程，确保跨媒介呈现的专业感与品牌张力，提升信息触达效率。\n· **S 级角色 PV 节奏把控：** 深度参与**“佩恩”角色视频**的剪辑节奏与镜头衔接，运用高标准的**视听语言**精准对齐 **IP 监修标准**，深度还原角色性格魅力。",
     outcome: "· **赛事高标准落地：** 成功护航多站**大型线下赛事**落地，以清晰的逻辑与高级的视觉风格获得业务方高度认可，确立了 IP 在竞技场景下的视觉标准。\n· **百万级现象传播：** 助力角色 PV 实现 B 站单平台播放量 **1,000,000+**，成为阶段性爆款内容，显著提升了核心玩家的活跃度与品牌搜索指数。",
@@ -137,10 +137,10 @@ export const PROJECTS = [
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/video2_2.mp4', title: '佩恩角色PV (1.1M+ Views)', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_1.jpg', title: '城市赛PV LOGO', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_2.jpg', title: '城市赛PV 城市介绍', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_3.jpg', title: '城市赛PV大标题', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_4.jpg', title: '城市赛PV赛制介绍', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_5.jpg', title: '城市赛PV奖金介绍', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_6.jpg', title: '城市赛PV赛制介绍', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_3.jpg', title: '城市赛PV 大标题', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_4.jpg', title: '城市赛PV 赛制介绍', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_5.jpg', title: '城市赛PV 奖金介绍', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/02%20Naruto/pic2_6.jpg', title: '城市赛PV 赛制介绍', aspectRatio: '16/9' },
     ],
   },
   {
@@ -189,7 +189,7 @@ export const PROJECTS = [
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_1.jpg', title: '浙传B站主页', aspectRatio: '9/16' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_2.jpg', title: 'BDF数据', aspectRatio: '9/16' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_3.jpg', title: 'BDF向阳', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_4.jpg', title: '向阳_片尾', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_4.jpg', title: '向阳 片尾', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_5.jpg', title: '2021 BDF', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/04%20CUZBilibili/pic4_6.png', title: '2021 BDF 数据', aspectRatio: '16/9' },
     ],
@@ -211,9 +211,9 @@ export const PROJECTS = [
     media: [
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/video5_1.mp4', title: '从海上到上海', aspectRatio: '16/9' },
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/video5_2.mp4', title: '起底美国疫情真相 (1.7M+ Views)', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_1.jpg', title: '我从海上到上海', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_2.jpg', title: '我从海上到上海', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_3.jpg', title: '我从海上到上海', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_1.png', title: '我从海上到上海', aspectRatio: '16/9', scale: 1.35 },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_2.png', title: '我从海上到上海', aspectRatio: '16/9', scale: 1.35 },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_3.png', title: '我从海上到上海', aspectRatio: '16/9', scale: 1.35 },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_4.jpg', title: '起底美国疫情真相', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_5.jpg', title: '起底美国疫情真相', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/05%20CUZCCTV/pic5_6.png', title: '起底美国疫情真相 数据', aspectRatio: '16/9' },
@@ -230,33 +230,33 @@ export const PROJECTS = [
     challenge:
       "传统 MMD（MikuMikuDance）工具在**光影表现与渲染精度**上难以满足次世代视觉标准。本项目的核心目标是探索如何在保持角色**二次元特征**的同时，引入高表现力的光影层次，提升 **IP 衍生内容**的视觉上限。",
     solution:
-      "· **搭建基于 Unreal Engine 5（UE5）的次世代渲染流程：** 打破传统单一工具链，整合 **Blender（布料结算）**与 **UE5（实时渲染）**，成功搭建了一套**接近 PBR 工业标准** 的风格化渲染管线。\n· **实时光影与后处理：** 利用** UE5 Lumen **系统与光线追踪技术增强环境表现，并配合** DaVinci Resolve 与 After Effect **进行影视级调色与视觉特效增强，实现了二次元角色与复杂光影环境的融合。\n· **独立完成从资产处理到后期合成的全过程：** 独立完成模型材质重构、环境搭建及最终后期视觉特效增强，展现了**全流程审美把控力**。",
-    outcome: "· **视觉维度突破：** 作品获得 **站酷（Zcool）编辑推荐**，证明了该技术逻辑在风格化渲染与视觉审美上的行业实战价值。\n· **验证了创意生产的高效性：** 通过 **UE5 实时渲染技术**的应用，大幅缩短了高画质视频的渲染周期，为日后大规模生产**高质感营销内容**积累了成熟的技术线路。",
+      "· **搭建基于 Unreal Engine 5（UE5）的次世代渲染流程：** 打破传统单一工具链，整合 **Blender（布料结算）**与 **UE5（实时渲染）**，成功搭建了一套**接近 PBR 工业标准** 的风格化渲染管线。\n· **实时光影与后处理：** 利用** UE5 Lumen **系统与**光线追踪技术**增强环境表现，并配合** DaVinci Resolve 与 After Effect **进行影视级调色与视觉特效增强，实现了二次元角色与复杂光影环境的融合。\n· **全流程视觉开发：** 独立完成模型材质重构、环境搭建及最终后期视觉特效增强，展现了**全流程审美把控力**。",
+    outcome: "· **视觉维度突破：** 作品获得 **站酷（Zcool）编辑推荐**，证明了该技术逻辑在风格化渲染与视觉审美上的行业实战价值。\n· **验证创意生产的高效性：** 通过 **UE5 实时渲染技术**的应用，大幅缩短了高画质视频的渲染周期，为日后大规模生产**高质感营销内容**积累了成熟的技术线路。",
     media: [
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/video6_1_4k.mp4', title: 'BDF2023 聚光', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_1.png', title: '人物模型处理', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_2.png', title: '人物材质编辑', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_3.png', title: '烟花添加', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_3.png', title: '添加烟花', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_4.png', title: '后期调色', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_5.png', title: '封面展示', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_6.png', title: '灯光添加', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_6.png', title: '灯光效果添加', aspectRatio: '16/9' },
     ],
   },
   {
     id: "7",
     title: "原神 宵宫 AI绘画：\n技术管线探索",
-    subtitle: "Yoimiya AI: Tech Pipeline Exploration",
+    subtitle: "AIGC Workflow",
     category: "Tech Art",
     cover: "https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_6.jpg",
     year: "2024",
     role: "AIGC 节点逻辑搭建",
     challenge: "针对 AIGC 创作中**随机性强、难以精准干预**的痛点，探索如何构建一套满足高精度**视觉一致性**与**确定性产出**的生产管线，以解决**特定 IP 角色**在不同场景下的还原度问题。",
-    solution: "· **节点式管线搭建：** 基于 **ComfyUI** 构建**节点化工作流**，实现模型加载、条件控制与图像解码的**模块化管理**，提升了创作过程的可控性。\n· **精准条件控制：** 协同 **ControlNet** 与 **LoRA** 在潜空间实现精准干预，确保对特定 IP 角色与风格的高度还原。\n· **高精度细节重构：** 整合**局部重绘与 4K 超分放大**技术优化视觉细节，确保最终产出符合高精度业内标准。",
+    solution: "· **节点式管线搭建：** 基于 **ComfyUI** 构建**节点化工作流**，实现模型加载、条件控制与图像解码的**模块化管理**，提升了创作过程的可控性。\n· **精准条件控制：** 协同 **ControlNet** 与 **LoRA** 实现精准干预，确保对特定 IP 角色与风格的高度还原。\n· **高精度细节重构：** 整合**局部重绘与 4K 超分放大**技术优化视觉细节，确保最终产出符合高精度业内标准。",
     outcome: "· **生产效率飞跃：** 验证了节点式管线的**高度可控性**，大幅缩短了从创意构思到高精度成图的迭代周期。\n· **技术资产标准化：** 积累了可高度复用的**ComfyUI工作流配置文件**，为在日后项目中引入AI 辅助生产提供成熟的技术实践路径。",
     media: [
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_1.PNG', title: '风格引导抽卡', aspectRatio: '9/16' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_2.PNG', title: '构图光影调整', aspectRatio: '9/16' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_3.PNG', title: '构图光影进阶调整', aspectRatio: '9/16' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_3.PNG', title: '构图光影调整（进阶）', aspectRatio: '9/16' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_4.PNG', title: '细节调整', aspectRatio: '9/16' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_5.PNG', title: 'ControlNet局部重绘', aspectRatio: '9/16' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/07%20AIGC/pic7_6.jpg', title: '超分放大成图', aspectRatio: '9/16' },
@@ -279,9 +279,9 @@ export const PROJECTS = [
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_1.jpg', title: '花村B点 内景', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_2.jpg', title: '花村B点 内景', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_3.jpg', title: '花村B点 外景', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_4.jpg', title: '人物渲染', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_5.jpg', title: '花村全景渲染', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_6.jpg', title: '花村庭院渲染', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_4.jpg', title: '人物细节', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_5.jpg', title: '花村全景', aspectRatio: '16/9' },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/08%20Overwatch/pic8_6.jpg', title: '花村庭院', aspectRatio: '16/9' },
     ],
   },
   {
@@ -313,8 +313,8 @@ export const PROJECTS = [
     cover: "https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_5.png",
     year: "2024",
     role: "独立开发",
-    challenge: "独立开发语境下构建具备**逻辑闭环**的 3D 交互原型，探索**环境叙事 (Environmental Storytelling)**与**解谜机制**的深度融合。核心难点在于平衡高工业规格的美术表现与交互引导的**确定性产出**。",
-    solution: "· **工业级管线整合：** 独立完成从**白盒原型 (Grey Box)**到高精资产的完整闭环，确立了基于 **Cinema 4D** 与 **Substance Painter** 的标准化**PBR 游戏生产开发工作流**。\n· **逻辑驱动叙事：** 利用 **UE4 蓝图** 独立开发含**状态机逻辑**的门禁、电力修复及复活系统，并配合 **Sequencer 动画序列**实现交互与过场动画的无缝衔接。",
+    challenge: "独立开发语境下构建具备**逻辑闭环**的 3D 交互原型，探索**环境叙事 (Environmental Storytelling)**与**解谜机制**的深度融合。核心难点在于平衡高工业规格的美术表现，并确保玩法引导在复杂环境中的**视觉准确性**。",
+    solution: "· **工作流管线整合：** 独立完成从**白盒原型 (Grey Box)**到高精资产的完整闭环，确立了基于 **Cinema 4D** 与 **Substance Painter** 的标准化**PBR 游戏生产开发工作流**。\n· **逻辑驱动叙事：** 利用 **UE4 蓝图** 独立开发含**状态机逻辑**的门禁、电力修复及复活系统，并配合 **Sequencer 动画序列**实现交互与过场动画的无缝衔接。",
     outcome: "· **全周期开发验证：** 通过从 0 到 1的项目实践，积累了在逻辑设计、管线整合及性能平衡方面的综合落地经验。\n· **高质量垂直切片：** 成功交付具备高完成度的**可运行 Demo**，展示了在底层架构构建与**玩家体验设计**上的专业水准。",
     media: [
       { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/video9_1.mp4', title: '实机演示', aspectRatio: '16/9' },
@@ -324,22 +324,22 @@ export const PROJECTS = [
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_4.png', title: '场景截图', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_5.png', title: '场景截图', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_6.png', title: '主菜单界面', aspectRatio: '16/9' },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_a.png', title: 'Concept&Narrative', aspectRatio: '16/9', fullWidth: true },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_b.png', title: 'Concept&Narrative', aspectRatio: '16/9', fullWidth: true },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_c.png', title: 'Technical Pipeline&Level Art', aspectRatio: '16/9', fullWidth: true },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_d.png', title: 'Technical Pipeline&Level Art', aspectRatio: '16/9', fullWidth: true },
-      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_e.png', title: 'Interactive Systems&Logic', aspectRatio: '16/9', fullWidth: true },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_a.png', title: 'Concept & Narrative', aspectRatio: '16/9', fullWidth: true },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_b.png', title: 'Concept & Narrative', aspectRatio: '16/9', fullWidth: true },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_c.png', title: 'Technical Pipeline & Level Art', aspectRatio: '16/9', fullWidth: true },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_d.png', title: 'Technical Pipeline & Level Art', aspectRatio: '16/9', fullWidth: true },
+      { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/pic9_e.png', title: 'Interactive Systems & Logic', aspectRatio: '16/9', fullWidth: true },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/09%20LostArk/f_Result%206.png', title: 'Result', aspectRatio: '16/9', fullWidth: true },
     ],
   }
 ];
 
 export const LOGOS = [
-  { name: "Logo 1", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286889/1_iv3eun.png" },
-  { name: "Logo 2", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286890/2_jkqwsr.png" },
-  { name: "Logo 3", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286891/3_ooq6vo.png" },
-  { name: "Logo 4", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286891/4_sicb57.png" },
-  { name: "Logo 5", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286891/5_saljew.png" },
-  { name: "Logo 6", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286893/6_juc05a.png" },
-  { name: "Logo 7", url: "https://res.cloudinary.com/di8s8kt8a/image/upload/v1772286890/7_ezpmin.png" }
+  { name: "Logo 1", url: "https://video.pecoxu.me/d/WebSupport/iCon/1.png" },
+  { name: "Logo 2", url: "https://video.pecoxu.me/d/WebSupport/iCon/2.png" },
+  { name: "Logo 3", url: "https://video.pecoxu.me/d/WebSupport/iCon/3.png" },
+  { name: "Logo 4", url: "https://video.pecoxu.me/d/WebSupport/iCon/4.png" },
+  { name: "Logo 5", url: "https://video.pecoxu.me/d/WebSupport/iCon/5.png" },
+  { name: "Logo 6", url: "https://video.pecoxu.me/d/WebSupport/iCon/6.png" },
+  { name: "Logo 7", url: "https://video.pecoxu.me/d/WebSupport/iCon/7.png" }
 ];

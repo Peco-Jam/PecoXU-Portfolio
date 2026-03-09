@@ -106,7 +106,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
         <h2 className="text-[18px] md:text-[20px] lg:text-[24px] leading-tight font-[500] tracking-tight mb-6 md:mb-4 lg:mb-6 text-black dark:text-white transition-colors duration-500">
           About Me.
         </h2>
-        <p className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 mb-8 md:mb-5 lg:mb-8 text-justify transition-colors duration-500">
+        <p className="text-[14px] md:text-[13px] lg:text-[16px] leading-relaxed font-normal text-black/60 dark:text-white/60 mb-8 md:mb-5 lg:mb-8 text-justify break-words [text-wrap:pretty] transition-colors duration-500">
           {PROFILE.bio}
         </p>
         
@@ -178,12 +178,12 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
         <div className="grid grid-cols-1 xl:grid-cols-[253px_1fr] gap-x-4 gap-y-6 md:gap-y-4 lg:gap-y-6">
           {PROFILE.techStack.map((tech) => {
             let orderClass = '';
-            if (tech.name === 'Photoshop') orderClass = 'md:order-1';
-            else if (tech.name === 'After Effects') orderClass = 'md:order-2';
-            else if (tech.name === 'Blender') orderClass = 'md:order-3';
-            else if (tech.name === 'Unreal Engine 5') orderClass = 'md:order-4';
-            else if (tech.name === 'ComfyUI') orderClass = 'md:order-5';
-            else if (tech.name === 'Framer') orderClass = 'md:order-6';
+            if (tech.name === 'Photoshop') orderClass = 'order-1';
+            else if (tech.name === 'After Effects') orderClass = 'order-2';
+            else if (tech.name === 'Blender') orderClass = 'order-3';
+            else if (tech.name === 'Unreal Engine 5') orderClass = 'order-4';
+            else if (tech.name === 'Gemini') orderClass = 'order-5';
+            else if (tech.name === 'ComfyUI') orderClass = 'order-6';
 
             return (
               <div key={tech.name} className={`flex items-center gap-3 md:gap-2.5 lg:gap-3 ${orderClass}`}>
@@ -191,7 +191,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
                   <img 
                     src={tech.icon} 
                     alt={tech.name} 
-                    className={`object-contain rounded-[4px] lg:rounded-[4px] w-full h-full ${tech.name === 'Unreal Engine 5' || tech.name === 'Framer' ? 'dark:invert' : ''} transition-all duration-500`}
+                    className={`object-contain rounded-[4px] lg:rounded-[4px] w-full h-full ${tech.name === 'Unreal Engine 5' ? 'dark:invert' : ''} transition-all duration-500`}
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -218,7 +218,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
             <h3 className="text-[16px] md:text-[15px] lg:text-[18px] leading-snug font-[475] tracking-tight mb-4 md:mb-3 lg:mb-4 flex items-center gap-2 lg:gap-2 text-black dark:text-white transition-colors duration-500">
               <Briefcase className="w-4 h-4 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4 text-black/50 dark:text-white/50 transition-colors duration-500" /> Experience
             </h3>
-            <div className="space-y-6 md:space-y-4 lg:space-y-6 pl-6 md:pl-5 lg:pl-6 border-l border-black/10 dark:border-white/10 transition-colors duration-500">
+            <div className="space-y-10 md:space-y-7 lg:space-y-10 pl-6 md:pl-5 lg:pl-6 border-l border-black/10 dark:border-white/10 transition-colors duration-500">
               {PROFILE.experience.map((exp, i) => (
                 <div key={i} className="relative">
                   <div className="absolute -left-[27px] md:-left-[23px] lg:-left-[27px] top-[0.65em] w-1.5 h-1.5 rounded-full bg-black dark:bg-white transition-colors duration-500"></div>
@@ -231,7 +231,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
                   </div>
                   {/* @ts-ignore */}
                   {exp.description && (
-                    <p className="text-[13px] md:text-[12px] lg:text-[15px] leading-relaxed font-normal text-black/60 dark:text-white/60 transition-colors duration-500">
+                    <p className="text-[13px] md:text-[12px] lg:text-[15px] leading-relaxed font-normal text-black/60 dark:text-white/60 text-justify break-words [text-wrap:pretty] transition-colors duration-500">
                       {/* @ts-ignore */}
                       {exp.description}
                     </p>
@@ -262,8 +262,20 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
         </div>
       </div>
 
-      <div className="text-[11px] md:text-[10px] lg:text-[12px] leading-relaxed font-normal text-black/40 dark:text-white/40 mt-6 md:mt-8 lg:mt-12 transition-colors duration-500">
-        © {new Date().getFullYear()} <strong className="font-[475]">{PROFILE.name}.</strong> All rights reserved.
+      <div className="text-[11px] md:text-[10px] lg:text-[12px] leading-relaxed font-normal text-black/40 dark:text-white/40 mt-6 md:mt-8 lg:mt-12 transition-colors duration-500 flex flex-col gap-1.5">
+        <div>
+          © 2026 PECO XU. All Rights Reserved.<br />
+          Powered by Gemini 3.1 via Google AI Studio.
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51019002009132" rel="noreferrer" target="_blank" className="flex items-center gap-1 hover:text-black/60 dark:hover:text-white/60 transition-colors">
+            <img src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" alt="公安备案图标" className="w-3.5 h-3.5 object-contain" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.src = 'https://www.beian.gov.cn/img/ghs.png'; e.currentTarget.onerror = () => e.currentTarget.style.display = 'none'; }} />
+            川公网安备51019002009132号
+          </a>
+          <a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank" className="hover:text-black/60 dark:hover:text-white/60 transition-colors">
+            蜀ICP备2026009415号-1
+          </a>
+        </div>
       </div>
     </motion.div>
   );
