@@ -225,7 +225,7 @@ export const PROJECTS = [
     subtitle: "UE5 Rendering",
     category: "Tech Art",
     cover: "https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_5.png",
-    year: "2025",
+    year: "2023",
     role: "3D 渲染与流程实践",
     challenge:
       "传统 MMD（MikuMikuDance）工具在**光影表现与渲染精度**上难以满足次世代视觉标准。本项目的核心目标是探索如何在保持角色**二次元特征**的同时，引入高表现力的光影层次，提升 **IP 衍生内容**的视觉上限。",
@@ -233,7 +233,7 @@ export const PROJECTS = [
       "· **搭建基于 Unreal Engine 5（UE5）的次世代渲染流程：** 打破传统单一工具链，整合 **Blender（布料结算）**与 **UE5（实时渲染）**，成功搭建了一套**接近 PBR 工业标准** 的风格化渲染管线。\n· **实时光影与后处理：** 利用** UE5 Lumen **系统与**光线追踪技术**增强环境表现，并配合** DaVinci Resolve 与 After Effect **进行影视级调色与视觉特效增强，实现了二次元角色与复杂光影环境的融合。\n· **全流程视觉开发：** 独立完成模型材质重构、环境搭建及最终后期视觉特效增强，展现了**全流程审美把控力**。",
     outcome: "· **视觉维度突破：** 作品获得 **站酷（Zcool）编辑推荐**，证明了该技术逻辑在风格化渲染与视觉审美上的行业实战价值。\n· **验证创意生产的高效性：** 通过 **UE5 实时渲染技术**的应用，大幅缩短了高画质视频的渲染周期，为日后大规模生产**高质感营销内容**积累了成熟的技术线路。",
     media: [
-      { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/video6_1_4k.mp4', title: 'BDF2023 聚光', aspectRatio: '16/9' },
+      { type: 'video', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/video6_1_4k.mp4', title: 'BDF 聚光', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_1.png', title: '人物模型处理', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_2.png', title: '人物材质编辑', aspectRatio: '16/9' },
       { type: 'image', url: 'https://video.pecoxu.me/d/Portfolio/06%20UE5Rendering/pic6_3.png', title: '添加烟花', aspectRatio: '16/9' },

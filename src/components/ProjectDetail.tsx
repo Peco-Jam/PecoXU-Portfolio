@@ -196,7 +196,10 @@ export default function ProjectDetail({
                   className="aspect-video w-full"
                 />
               ) : item.type === 'video' ? (
-                <div className="relative w-full overflow-hidden flex items-center justify-center">
+                <div 
+                  className="relative w-full overflow-hidden flex items-center justify-center"
+                  style={item.aspectRatio ? { aspectRatio: item.aspectRatio } : {}}
+                >
                   <video
                     src={item.url}
                     controls
@@ -204,7 +207,7 @@ export default function ProjectDetail({
                     muted
                     playsInline
                     onError={() => handleMediaError(i)}
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-contain"
                     ref={(el) => {
                       if (el && !el.dataset.initListeners) {
                         el.dataset.initListeners = 'true';
