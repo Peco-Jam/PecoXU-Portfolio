@@ -264,7 +264,7 @@ export default function Sidebar({ onAvatarClick }: SidebarProps) {
 
       <div className="text-[11px] md:text-[10px] lg:text-[12px] leading-relaxed font-normal text-black/40 dark:text-white/40 mt-6 md:mt-8 lg:mt-12 transition-colors duration-500 flex flex-col gap-1.5">
         <div>
-          © 2026 PECO XU. All Rights Reserved.<br />
+          © 2026 <strong className="font-[475]">PECO XU</strong>. All Rights Reserved.<br />
           Powered by Gemini 3.1 via Google AI Studio.
         </div>
         <div className="flex flex-wrap items-center gap-3">
